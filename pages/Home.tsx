@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Star, 
-  CloudOff, Gamepad2, GraduationCap, Download, Settings, Brain, List, Wrench, Quote, Watch, PlayCircle, Activity, ExternalLink, Youtube
+  CloudOff, Gamepad2, GraduationCap, Download, Settings, Brain, List, Wrench, Quote, Watch, PlayCircle, Activity, ExternalLink, Youtube, Box
 } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
             </h1>
             
             <h2 className="text-xl lg:text-2xl font-light text-gray-500 max-w-lg animate-fade-in-up delay-100">
-              El programa de especialización definitivo de <strong>EduMotion Lab</strong>. Metodologías Activas y Digitalización para docentes de Educación Física.
+              Accede a una <strong>Caja de Herramientas Tecnológicas</strong> real para el patio. Gestiona, evalúa y gamifica tu asignatura desde nuestro entorno <strong>Moodle (EVA)</strong>.
             </h2>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-4 animate-fade-in-up delay-200">
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-brand-orange/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                 
-                <span className="relative z-10">Ver Programa Formativo</span>
+                <span className="relative z-10">Ver Herramientas</span>
                 <ArrowRight className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
@@ -173,7 +173,7 @@ const Home: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
                <span className="text-brand-orange font-bold text-sm uppercase tracking-wider mb-2 block">EduMotion Lab</span>
-               <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">Expertos en Didáctica de la Educación Física</h2>
+               <h2 className="text-3xl md:text-4xl font-bold text-dark">Expertos en Didáctica de la Educación Física</h2>
                <p className="text-gray-500 text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
                   Acompañamos a docentes y centros en el proceso de transformación hacia una Educación Física más competencial. Este curso es el resultado de 5 años de investigación.
                </p>
@@ -198,7 +198,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
            <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">El Curso</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">¿Qué es "Innovar en Movimiento"?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dark">¿Qué es "Innovar en Movimiento"?</h2>
               <p className="text-gray-500">
                  Es el ecosistema de formación diseñado por EduMotion Lab para dar respuesta a los retos del nuevo currículo educativo.
               </p>
@@ -209,11 +209,11 @@ const Home: React.FC = () => {
               <div className="flex flex-col bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-brand-orange/10 transition-all duration-300 border-b-4 border-brand-orange group h-full relative overflow-hidden transform hover:-translate-y-2">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500"></div>
                  <div className="w-16 h-16 rounded-2xl bg-brand-orange/10 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm relative z-10">
-                    <CloudOff className="h-8 w-8" />
+                    <Box className="h-8 w-8" />
                  </div>
-                 <h3 className="text-2xl font-bold text-dark mb-4 relative z-10">El Desafío</h3>
+                 <h3 className="text-2xl font-bold text-dark mb-4 relative z-10">Caja de Herramientas</h3>
                  <p className="text-gray-500 text-base leading-relaxed relative z-10">
-                    Superamos la resistencia al cambio metodológico mediante herramientas prácticas y aterrizadas a la realidad del patio.
+                    Aprende a usar <strong>Trello, Plickers, Kinovea y Actionbound</strong>. Herramientas prácticas para gestión, evaluación y gamificación.
                  </p>
               </div>
 
@@ -221,11 +221,11 @@ const Home: React.FC = () => {
               <div className="flex flex-col bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border-b-4 border-primary group h-full relative overflow-hidden transform hover:-translate-y-2">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500"></div>
                  <div className="w-16 h-16 rounded-2xl bg-blue-50 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm relative z-10">
-                    <Gamepad2 className="h-8 w-8" />
+                    <GraduationCap className="h-8 w-8" />
                  </div>
-                 <h3 className="text-2xl font-bold text-dark mb-4 relative z-10">Foco Competencial</h3>
+                 <h3 className="text-2xl font-bold text-dark mb-4 relative z-10">Foco LOMLOE</h3>
                  <p className="text-gray-500 text-base leading-relaxed relative z-10">
-                    Transformamos las unidades didácticas tradicionales en Situaciones de Aprendizaje motivadoras y alineadas con la LOMLOE.
+                    Diseña SdA alineadas con los <strong>Descriptores Operativos</strong> y utiliza rúbricas digitales (CoRubrics) para la evaluación competencial.
                  </p>
               </div>
 
@@ -233,11 +233,11 @@ const Home: React.FC = () => {
               <div className="flex flex-col bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-secondary-green/10 transition-all duration-300 border-b-4 border-secondary-green group h-full relative overflow-hidden transform hover:-translate-y-2">
                  <div className="absolute top-0 right-0 w-32 h-32 bg-secondary-green/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-500"></div>
                  <div className="w-16 h-16 rounded-2xl bg-green-50 text-secondary-green-dark flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm relative z-10">
-                    <GraduationCap className="h-8 w-8" />
+                    <Brain className="h-8 w-8" />
                  </div>
-                 <h3 className="text-2xl font-bold text-dark mb-4 relative z-10">Impacto Real</h3>
+                 <h3 className="text-2xl font-bold text-dark mb-4 relative z-10">Entorno Moodle</h3>
                  <p className="text-gray-500 text-base leading-relaxed relative z-10">
-                    Nuestros docentes implementan innovaciones que mejoran el compromiso motor y la inclusión de todo el alumnado.
+                    Todo integrado en nuestro <strong>EVA (Entorno Virtual de Aprendizaje)</strong>. Aprende a crear contenidos interactivos H5P para tu alumnado.
                  </p>
               </div>
            </div>
@@ -291,9 +291,9 @@ const Home: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <h4 className="text-lg font-bold text-dark mb-1">Enfoque Pedagógico</h4>
+                        <h4 className="text-lg font-bold text-dark mb-1">Modelo ADDIE</h4>
                         <p className="text-sm text-gray-500">
-                           Programa basado en el <strong>Modelo ADDIE</strong> para asegurar que tu diseño instruccional sea riguroso y efectivo.
+                           Usamos <strong>Trello y Notion</strong> para la fase de Planificación y Diseño Instruccional riguroso.
                         </p>
                      </div>
                   </div>
@@ -308,7 +308,7 @@ const Home: React.FC = () => {
                      <div>
                         <h4 className="text-lg font-bold text-dark mb-1">Evaluación Competencial</h4>
                         <p className="text-sm text-gray-500">
-                           Domina el uso de <strong>Rúbricas, Dianas y Co-evaluación</strong> digital para dar respuesta a la LOMLOE.
+                           Domina <strong>Plickers, CoRubrics</strong> y listas de cotejo digitales para evaluar Descriptores Operativos.
                         </p>
                      </div>
                   </div>
@@ -321,14 +321,10 @@ const Home: React.FC = () => {
                         </div>
                      </div>
                      <div className="w-full">
-                        <h4 className="text-lg font-bold text-dark mb-1">Ejes Temáticos</h4>
-                        <ul className="text-sm text-gray-500 list-decimal list-inside space-y-1">
-                           <li>Normativa y Situaciones de Aprendizaje</li>
-                           <li>Gamificación y ABR en el gimnasio</li>
-                           <li>Evaluación Digital y Feedback</li>
-                           <li>Inclusión y DUA</li>
-                           <li>Proyecto de Innovación Final</li>
-                        </ul>
+                        <h4 className="text-lg font-bold text-dark mb-1">Metodologías Activas</h4>
+                        <p className="text-sm text-gray-500">
+                           Creación de Gymkhanas digitales con <strong>Actionbound</strong> y gamificación de aula con <strong>ClassCraft</strong>.
+                        </p>
                      </div>
                   </div>
 
@@ -340,9 +336,9 @@ const Home: React.FC = () => {
                         </div>
                      </div>
                      <div>
-                        <h4 className="text-lg font-bold text-dark mb-1">Tecnología Útil</h4>
+                        <h4 className="text-lg font-bold text-dark mb-1">Rendimiento y Salud</h4>
                         <p className="text-sm text-gray-500">
-                           Aprende a integrar <strong>Video-análisis, Apps de salud y Wearables</strong> sin perder tiempo motor.
+                           Análisis biomecánico con <strong>Kinovea</strong> y seguimiento de actividad con <strong>Strava y Google Fit</strong>.
                         </p>
                      </div>
                   </div>

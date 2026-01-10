@@ -38,6 +38,7 @@ const Footer: React.FC = () => {
               <li><Link to="/" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Inicio</Link></li>
               <li><Link to="/project" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">El Proyecto</Link></li>
               <li><Link to="/program" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Programa Formativo</Link></li>
+              <li><Link to="/resources" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Recursos Digitales</Link></li>
               {/* Cambio de 'Nosotros' a 'EduMotion Lab' */}
               <li><Link to="/about" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">EduMotion Lab</Link></li>
               <li><Link to="/faq" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Preguntas Frecuentes</Link></li>

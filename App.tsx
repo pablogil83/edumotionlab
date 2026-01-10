@@ -8,6 +8,7 @@ import Chatbot from './components/Chatbot';
 import Home from './pages/Home';
 import Project from './pages/Project';
 import Program from './pages/Program';
+import Resources from './pages/Resources';
 import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
@@ -73,6 +74,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/project" element={<Project />} />
             <Route path="/program" element={<Program />} />
+            <Route path="/resources" element={<Resources />} />
             <Route path="/about" element={<About />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />

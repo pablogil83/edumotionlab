@@ -10,6 +10,7 @@ const Header: React.FC = () => {
     { name: 'Inicio', path: '/' },
     { name: 'El Proyecto', path: '/project' },
     { name: 'Programa Formativo', path: '/program' },
+    { name: 'Recursos Digitales', path: '/resources' },
     { name: 'EduMotion Lab', path: '/about' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contacto', path: '/contact' },
@@ -41,13 +42,13 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4">
-            <nav className="flex gap-2">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <nav className="flex gap-1 xl:gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+                  className={`px-3 xl:px-4 py-2 rounded-full text-sm transition-all duration-300 whitespace-nowrap ${
                     isActive(link.path) 
                       ? 'text-primary font-black bg-primary/10 shadow-sm ring-1 ring-primary/20 transform scale-105' 
                       : 'text-gray-500 font-medium hover:bg-gray-100 hover:text-primary hover:font-bold hover:shadow-sm'
@@ -59,7 +60,7 @@ const Header: React.FC = () => {
             </nav>
             <Link
               to="/register"
-              className="ml-4 bg-gradient-to-r from-accent to-orange-500 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-bold py-2.5 px-6 rounded-full transition-all transform hover:-translate-y-0.5 shadow-lg shadow-accent/20 flex items-center gap-2 hover:shadow-accent/40"
+              className="ml-2 xl:ml-4 bg-gradient-to-r from-accent to-orange-500 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-bold py-2.5 px-5 xl:px-6 rounded-full transition-all transform hover:-translate-y-0.5 shadow-lg shadow-accent/20 flex items-center gap-2 hover:shadow-accent/40 whitespace-nowrap"
             >
               Inscríbete
             </Link>

@@ -25,7 +25,7 @@ const Project: React.FC = () => {
                  Innovar en Movimiento
               </h1>
               <p className="text-xl text-gray-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up delay-100">
-                 La respuesta formativa que <strong>EduMotion Lab</strong> ha diseñado para integrar tecnología y motricidad. Un curso nacido de la experiencia en el aula.
+                 La respuesta formativa que <strong>EduMotion Lab</strong> ha diseñado para integrar tecnología y motricidad. Una "Caja de Herramientas" pedagógicas centralizada en <strong>Moodle</strong>.
               </p>
             </div>
 
@@ -50,7 +50,7 @@ const Project: React.FC = () => {
                       <Activity className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Status</p>
+                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Moodle EVA</p>
                       <p className="text-dark font-bold text-sm leading-tight">Monitoreo Activo</p>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ const Project: React.FC = () => {
                     <div className="absolute inset-0 bg-white/30 animate-[pulse_2s_infinite]"></div>
                     <div className="bg-primary h-full rounded-full w-[90%] shadow-[0_0_15px_rgba(19,91,236,0.6)]"></div>
                   </div>
-                  <p className="text-xs text-primary/70 mt-2 font-medium">Tecnología invisible que incentiva el movimiento continuo.</p>
+                  <p className="text-xs text-primary/70 mt-2 font-medium">Tecnología invisible (Plickers, Kinovea) que incentiva el movimiento.</p>
                 </div>
               </div>
             </div>
@@ -119,12 +119,12 @@ const Project: React.FC = () => {
                  Existe un temor fundado entre los docentes: que la introducción de dispositivos en el gimnasio o el patio reduzca el <strong className="text-dark">tiempo de compromiso motor</strong>. Nuestra propuesta aborda este desafío directamente.
               </p>
               <p className="text-lg text-gray-500 leading-relaxed">
-                 No traemos pantallas para mirar sentados. Implementamos <strong className="text-primary font-medium">tecnología invisible</strong>: herramientas que recopilan datos, gamifican la experiencia y ofrecen feedback inmediato, potenciando la actividad física sin interrumpirla.
+                 No traemos pantallas para mirar sentados. Implementamos <strong className="text-primary font-medium">tecnología invisible</strong>: herramientas como <strong>Actionbound</strong> o <strong>Strava</strong> que recopilan datos y gamifican la experiencia, potenciando la actividad física sin interrumpirla.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-success mt-0.5" />
-                  <span className="text-gray-700 font-medium">Sin interrupciones en la dinámica de clase.</span>
+                  <span className="text-gray-700 font-medium">Evaluación por Descriptores Operativos.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-success mt-0.5" />
@@ -164,21 +164,21 @@ const Project: React.FC = () => {
               { 
                 icon: <Monitor className="h-8 w-8" />, 
                 title: "Tecnología Invisible", 
-                desc: "Integración transparente. El dispositivo no es el centro, sino el facilitador de la experiencia motriz.",
+                desc: "Herramientas como Plickers que no requieren dispositivos en manos de los alumnos.",
                 color: "text-primary",
                 bg: "bg-blue-50"
               },
               { 
                 icon: <Globe className="h-8 w-8" />, 
-                title: "Equidad Territorial", 
-                desc: "Recursos offline que garantizan el acceso universal, independientemente de la conectividad del centro.",
+                title: "Ecosistema Moodle", 
+                desc: "Centralizamos todos los recursos (H5P, Canvas SdA) en un entorno seguro y conocido.",
                 color: "text-secondary-green-dark",
                 bg: "bg-emerald-50"
               },
               { 
                 icon: <Share2 className="h-8 w-8" />, 
                 title: "Itinerarios Adaptativos", 
-                desc: "Diseñamos dos velocidades de aprendizaje: 'Fondo' para iniciación y 'Sprint' para expertos. Nadie se queda atrás.",
+                desc: "Diseñamos dos velocidades de aprendizaje: 'Fondo' para iniciación y 'Sprint' para expertos.",
                 color: "text-accent",
                 bg: "bg-purple-50"
               },
@@ -229,13 +229,13 @@ const Project: React.FC = () => {
                   <h3 className="text-2xl font-black text-dark mb-2">Profesional</h3>
                   <p className="text-primary font-bold text-sm mb-6 uppercase tracking-wider">El Docente de Aula</p>
                   <p className="text-gray-500 mb-6 leading-relaxed flex-grow">
-                     Para profesores de Educación Física que sienten que la tecnología avanza más rápido que sus metodologías y buscan herramientas prácticas.
+                     Para profesores de Educación Física que necesitan herramientas prácticas (Trello, CoRubrics) para modernizar sus clases.
                   </p>
                   <div className="bg-light p-4 rounded-xl border border-gray-100 space-y-3">
                      <h4 className="font-bold text-dark text-sm mb-2 flex items-center gap-2"><Target className="h-4 w-4"/> Objetivos:</h4>
                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5"/> <span>Mejorar competencia digital (DigCompEdu).</span></li>
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5"/> <span>Gamificar sesiones.</span></li>
+                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5"/> <span>Evaluar competencias LOMLOE.</span></li>
+                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5"/> <span>Gamificar sesiones con Apps.</span></li>
                      </ul>
                   </div>
                </div>
@@ -251,12 +251,12 @@ const Project: React.FC = () => {
                   <h3 className="text-2xl font-black text-dark mb-2">Institucional</h3>
                   <p className="text-secondary-green-dark font-bold text-sm mb-6 uppercase tracking-wider">El Centro Educativo</p>
                   <p className="text-gray-500 mb-6 leading-relaxed flex-grow">
-                     Para equipos directivos y coordinadores TIC que buscan proyectos de innovación transversal que modernicen sus espacios deportivos.
+                     Para equipos directivos y coordinadores TIC que buscan integrar Moodle y el Plan Digital de Centro en el departamento de EF.
                   </p>
                   <div className="bg-light p-4 rounded-xl border border-gray-100 space-y-3">
                      <h4 className="font-bold text-dark text-sm mb-2 flex items-center gap-2"><Target className="h-4 w-4"/> Objetivos:</h4>
                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-secondary-green-dark shrink-0 mt-0.5"/> <span>Plan Digital de Centro.</span></li>
+                        <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-secondary-green-dark shrink-0 mt-0.5"/> <span>Unificar criterios de evaluación.</span></li>
                         <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-secondary-green-dark shrink-0 mt-0.5"/> <span>Equipamiento sostenible.</span></li>
                      </ul>
                   </div>
@@ -273,7 +273,7 @@ const Project: React.FC = () => {
                   <h3 className="text-2xl font-black text-dark mb-2">Estratégico</h3>
                   <p className="text-accent font-bold text-sm mb-6 uppercase tracking-wider">Administración y Asesores</p>
                   <p className="text-gray-500 mb-6 leading-relaxed flex-grow">
-                     Para responsables de políticas educativas y asesores de formación que buscan programas escalables de salud y digitalización.
+                     Para responsables de políticas educativas que buscan programas escalables basados en evidencias y salud digital (Google Fit, Strava).
                   </p>
                   <div className="bg-light p-4 rounded-xl border border-gray-100 space-y-3">
                      <h4 className="font-bold text-dark text-sm mb-2 flex items-center gap-2"><Target className="h-4 w-4"/> Objetivos:</h4>
@@ -302,22 +302,22 @@ const Project: React.FC = () => {
              {[
                { 
                  title: "Innovación Tecnopedagógica", 
-                 desc: "Implementación de herramientas interactivas como H5P, aplicaciones móviles específicas y Realidad Aumentada (RA).",
+                 desc: "Implementación de herramientas como Genially y H5P para crear contenidos interactivos.",
                  icon: <Cpu className="h-20 w-20" />
                },
                { 
                  title: "Inclusión Universal", 
-                 desc: "Diseño basado en DUA y estándares WCAG 2.1, asegurando que todos los materiales sean accesibles.",
+                 desc: "Diseño basado en DUA y el Checklist de Inclusión, asegurando materiales accesibles para todos.",
                  icon: <Accessibility className="h-20 w-20" />
                },
                { 
-                 title: "Transferencia Inmediata", 
-                 desc: "Metodología práctica enfocada en el 'aprender haciendo', con recursos listos para ser utilizados en el aula.",
+                 title: "Evaluación Competencial", 
+                 desc: "Uso de Rúbricas Digitales para calificar Descriptores Operativos de forma objetiva.",
                  icon: <Rocket className="h-20 w-20" />
                },
                { 
                  title: "Comunidades de Práctica", 
-                 desc: "Fomento de redes de colaboración docente para compartir experiencias, resolver dudas y evolucionar.",
+                 desc: "Fomento de redes de colaboración docente en Moodle para compartir experiencias.",
                  icon: <Users className="h-20 w-20" />
                }
              ].map((obj, i) => (
@@ -345,7 +345,7 @@ const Project: React.FC = () => {
              </div>
              <h2 className="text-3xl md:text-4xl font-black text-dark mb-6">Modelo de Diseño Instruccional ADDIE</h2>
              <p className="text-gray-500 text-lg leading-relaxed">
-                Adaptamos el estándar mundial de diseño educativo a las necesidades específicas del movimiento. No improvisamos; estructuramos la innovación en 5 fases críticas.
+                Adaptamos el estándar mundial de diseño educativo. No improvisamos; estructuramos la innovación en 5 fases críticas utilizando <strong>Moodle</strong> como eje vertebrador.
              </p>
           </div>
 
@@ -356,31 +356,31 @@ const Project: React.FC = () => {
                { 
                  letter: "A", title: "Análisis y Diagnóstico", 
                  subtitle: "Kit Digital y DigCompEdu",
-                 desc: "No solo evaluamos al docente, analizamos la conectividad real del patio y el material deportivo disponible.",
+                 desc: "Evaluamos la competencia digital inicial y los recursos del centro.",
                  icon: <Search className="h-5 w-5"/>, color: "bg-blue-600"
                },
                { 
                  letter: "D", title: "Diseño Instruccional", 
-                 subtitle: "Planificación del Entrenamiento",
-                 desc: "Estructuramos itinerarios personalizados (6 semanas) y definimos los retos prácticos (ej. diseñar una SdA gamificada).",
+                 subtitle: "Planificación con Trello/Notion",
+                 desc: "Estructuramos itinerarios y definimos las SdA usando el Canvas oficial.",
                  icon: <PenTool className="h-5 w-5"/>, color: "bg-indigo-600"
                },
                { 
                  letter: "D", title: "Desarrollo de Recursos", 
-                 subtitle: "Producción 'Gym-Learning'",
-                 desc: "Configuramos el entorno en Moodle, las e-rúbricas, los vídeos interactivos y los foros de 'Vestuario Digital'.",
+                 subtitle: "Entorno Moodle (EVA)",
+                 desc: "Configuramos el aula virtual, subimos contenidos H5P y preparamos las e-rúbricas.",
                  icon: <Code className="h-5 w-5"/>, color: "bg-purple-600"
                },
                { 
                  letter: "I", title: "Implementación Piloto", 
-                 subtitle: "Despliegue de Cohorte (80 plazas)",
-                 desc: "Tutorización experta con feedback biomecánico y resolución de dudas técnicas 'in situ'.",
+                 subtitle: "Acción en el Patio",
+                 desc: "Uso real de Plickers y Actionbound con los alumnos. Tutorización experta.",
                  icon: <Play className="h-5 w-5"/>, color: "bg-pink-600"
                },
                { 
                  letter: "E", title: "Evaluación de Impacto", 
-                 subtitle: "Medición del Impacto Real",
-                 desc: "Analizamos el aumento del tiempo de compromiso motor y entregamos informes de certificación para el centro.",
+                 subtitle: "Informes Competenciales",
+                 desc: "Analizamos resultados en CoRubrics y medimos la mejora del tiempo motor.",
                  icon: <BarChart2 className="h-5 w-5"/>, color: "bg-brand-orange"
                },
              ].map((phase, idx) => (
@@ -410,7 +410,7 @@ const Project: React.FC = () => {
 
           <div className="mt-12 text-center">
              <Link to="/program" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
-                Ver desglose completo en el Programa Formativo <ArrowRight className="h-5 w-5" />
+                Ver desglose de Herramientas Digitales <ArrowRight className="h-5 w-5" />
              </Link>
           </div>
         </div>
