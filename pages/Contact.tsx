@@ -97,8 +97,9 @@ const Contact: React.FC = () => {
              </ul>
 
              {/* Interactive Map */}
-             <div id="contact-map" className="flex-grow w-full min-h-[400px] lg:h-auto lg:min-h-0 rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative z-0">
-               <MapContainer center={position} zoom={13} scrollWheelZoom={false} className="h-full w-full" style={{ height: '100%', minHeight: '100%' }}>
+             {/* Importante: Se define una altura mínima explícita para evitar colapso de Leaflet */}
+             <div id="contact-map" className="flex-grow w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative z-0" style={{ minHeight: '400px' }}>
+               <MapContainer center={position} zoom={13} scrollWheelZoom={false} className="h-full w-full" style={{ height: '100%', minHeight: '400px', width: '100%' }}>
                   <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
