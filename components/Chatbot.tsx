@@ -56,9 +56,15 @@ const Chatbot: React.FC = () => {
 
   useEffect(() => {
     const initChat = () => {
+      // PREVENCIÓN DE CRASH: Verificar si hay API KEY antes de intentar inicializar
+      const apiKey = process.env.API_KEY;
+      if (!apiKey || apiKey === '') {
+        console.warn("EduBot: No API Key found. Chatbot will be disabled or limited.");
+        return;
+      }
+
       try {
-        // Correct initialization with gemini-3-flash-preview as per guidelines
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const ai = new GoogleGenAI({ apiKey });
         chatSessionRef.current = ai.chats.create({
           model: 'gemini-3-flash-preview',
           config: {
@@ -70,6 +76,7 @@ const Chatbot: React.FC = () => {
         console.error("Error inicializando el chat:", error);
       }
     };
+    
     if (!chatSessionRef.current) initChat();
   }, []);
 
@@ -79,18 +86,37 @@ const Chatbot: React.FC = () => {
   const handleSend = async (e?: React.FormEvent) => {
     e?.preventDefault();
     if (!input.trim() || isLoading) return;
+    
     const userMessage: Message = { id: Date.now().toString(), text: input, sender: 'user', timestamp: new Date() };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+    
     try {
-      if (!chatSessionRef.current) throw new Error("Chat no inicializado");
+      if (!chatSessionRef.current) {
+        // Fallback si no hay API Key o sesión
+        setTimeout(() => {
+          const botMessage: Message = { 
+            id: (Date.now() + 1).toString(), 
+            text: "Lo siento, el asistente no está conectado a la IA en este momento (API Key no configurada). Por favor, usa el formulario de contacto.", 
+            sender: 'bot', 
+            timestamp: new Date() 
+          };
+          setMessages(prev => [...prev, botMessage]);
+          setIsLoading(false);
+        }, 500);
+        return;
+      }
+
       const response = await chatSessionRef.current.sendMessage({ message: userMessage.text });
       const botMessage: Message = { id: (Date.now() + 1).toString(), text: response.text || "Lo siento, tuve un problema procesando tu respuesta.", sender: 'bot', timestamp: new Date() };
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      setMessages(prev => [...prev, { id: Date.now().toString(), text: "Lo siento, ha ocurrido un error. Inténtalo más tarde.", sender: 'bot', timestamp: new Date() }]);
-    } finally { setIsLoading(false); }
+      console.error("Error enviando mensaje:", error);
+      setMessages(prev => [...prev, { id: Date.now().toString(), text: "Lo siento, ha ocurrido un error de conexión. Inténtalo más tarde.", sender: 'bot', timestamp: new Date() }]);
+    } finally { 
+      if (chatSessionRef.current) setIsLoading(false); 
+    }
   };
 
   return (
