@@ -160,32 +160,48 @@ const Program: React.FC = () => {
                    </ul>
                 </div>
 
-                {/* Evaluación */}
+                {/* Evaluación - UPDATED DESIGN */}
                 <div>
                    <span className="text-secondary-green-dark font-bold text-sm uppercase tracking-wider mb-2 block">Cómo Evaluamos</span>
                    <h2 className="text-3xl font-bold text-dark mb-6">La Tríada de Evaluación</h2>
                    <div className="bg-light p-6 rounded-2xl border border-gray-100 space-y-4">
-                      <div className="flex items-center gap-4 p-3 bg-white rounded-xl shadow-sm">
-                         <div className="font-black text-gray-300 text-2xl">01</div>
-                         <div>
-                            <h4 className="font-bold text-dark">Diagnóstica</h4>
-                            <p className="text-xs text-gray-500">Cuestionario inicial de competencia digital y análisis DAFO del centro.</p>
+                      
+                      {/* 01 Diagnóstica */}
+                      <div className="group flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden">
+                         <div className="absolute right-0 top-0 h-16 w-16 bg-blue-50 rounded-bl-full -mr-8 -mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         <div className="h-12 w-12 flex items-center justify-center bg-blue-50 text-blue-600 rounded-lg shrink-0 group-hover:scale-110 transition-transform relative z-10">
+                            <span className="font-black text-xl">01</span>
+                         </div>
+                         <div className="relative z-10">
+                            <h4 className="font-bold text-dark text-lg group-hover:text-blue-600 transition-colors">Diagnóstica</h4>
+                            <p className="text-sm text-gray-500 leading-snug">Cuestionario inicial de competencia digital y análisis DAFO del centro.</p>
                          </div>
                       </div>
-                      <div className="flex items-center gap-4 p-3 bg-white rounded-xl shadow-sm">
-                         <div className="font-black text-gray-300 text-2xl">02</div>
-                         <div>
-                            <h4 className="font-bold text-dark">Formativa</h4>
-                            <p className="text-xs text-gray-500">Feedback continuo en los foros de Moodle y superación de retos semanales.</p>
+
+                      {/* 02 Formativa */}
+                      <div className="group flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-brand-orange hover:shadow-lg hover:shadow-orange-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden">
+                         <div className="absolute right-0 top-0 h-16 w-16 bg-orange-50 rounded-bl-full -mr-8 -mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         <div className="h-12 w-12 flex items-center justify-center bg-orange-50 text-brand-orange rounded-lg shrink-0 group-hover:scale-110 transition-transform relative z-10">
+                            <span className="font-black text-xl">02</span>
+                         </div>
+                         <div className="relative z-10">
+                            <h4 className="font-bold text-dark text-lg group-hover:text-brand-orange transition-colors">Formativa</h4>
+                            <p className="text-sm text-gray-500 leading-snug">Feedback continuo en los foros de Moodle y superación de retos semanales.</p>
                          </div>
                       </div>
-                      <div className="flex items-center gap-4 p-3 bg-white rounded-xl shadow-sm border-l-4 border-secondary-green">
-                         <div className="font-black text-secondary-green text-2xl">03</div>
-                         <div>
-                            <h4 className="font-bold text-dark">Sumativa</h4>
-                            <p className="text-xs text-gray-500">Entrega y defensa del Proyecto de Innovación (SdA) diseñado durante el curso.</p>
+
+                      {/* 03 Sumativa */}
+                      <div className="group flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-secondary-green hover:shadow-lg hover:shadow-emerald-500/10 hover:-translate-y-1 transition-all duration-300 cursor-default relative overflow-hidden">
+                         <div className="absolute right-0 top-0 h-16 w-16 bg-emerald-50 rounded-bl-full -mr-8 -mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         <div className="h-12 w-12 flex items-center justify-center bg-emerald-50 text-secondary-green-dark rounded-lg shrink-0 group-hover:scale-110 transition-transform relative z-10">
+                            <span className="font-black text-xl">03</span>
+                         </div>
+                         <div className="relative z-10">
+                            <h4 className="font-bold text-dark text-lg group-hover:text-secondary-green-dark transition-colors">Sumativa</h4>
+                            <p className="text-sm text-gray-500 leading-snug">Entrega y defensa del Proyecto de Innovación (SdA) diseñado durante el curso.</p>
                          </div>
                       </div>
+
                    </div>
                 </div>
              </div>

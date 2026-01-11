@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="text-sm text-gray-600 leading-relaxed">
-              {t('stats.desc')}
+              Somos un laboratorio de innovación educativa especializado en Educación Física. Fusionamos pedagogía y tecnología para transformar el aprendizaje motriz en las aulas.
             </p>
           </div>
 
