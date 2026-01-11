@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lightbulb, Users, Leaf, Target, Award, ArrowRight, Rocket, Mail, Link as LinkIcon, Zap, Eye, Mic2, Flag, CheckCircle, ClipboardCheck, Puzzle, Loader2 } from 'lucide-react';
+import { Lightbulb, Users, Leaf, Target, Award, ArrowRight, Rocket, Mail, Link as LinkIcon, Zap, Eye, Mic2, Flag, CheckCircle, ClipboardCheck, Puzzle, Loader2, Compass, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Componente auxiliar para manejar la carga de imágenes de OneDrive
@@ -29,7 +29,6 @@ const About: React.FC = () => {
     {
       name: "Olga Asurmendi",
       role: "Dirección y Estrategia",
-      // SOLUCIÓN: Usamos la imagen proporcionada de OneDrive. Flag 'isPhoto' para ajustar estilos.
       image: "https://1drv.ms/i/c/176b0767a5ca5a26/IQSNgAD8Qu0xSohe2Q5xBUuDARhl-haeCoOwtfCZOWoHC-w?height=660", 
       isPhoto: true,
       bio: "Coordinadora general del proyecto. Experta en gestión de entornos e-learning y visión estratégica. Asegura que el proyecto cumpla los estándares de calidad y plazos del modelo ADDIE.",
@@ -41,7 +40,6 @@ const About: React.FC = () => {
     {
       name: "José Manuel Cayuela",
       role: "Diseño Instruccional",
-      // SOLUCIÓN: Usamos la imagen proporcionada de OneDrive. Flag 'isPhoto' para ajustar estilos.
       image: "https://1drv.ms/i/c/176b0767a5ca5a26/IQTha01XaGuPQbPfE3eEgCGRAUOsnhIR3wHzDfd6r06Zmsg?height=660",
       isPhoto: true,
       bio: "Responsable Pedagógico. Su enfoque es puramente didáctico: define los objetivos de aprendizaje, las rúbricas y asegura que la tecnología responda a las necesidades reales del currículo de EF.",
@@ -53,7 +51,6 @@ const About: React.FC = () => {
     {
       name: "Pablo Gil", 
       role: "Responsable Tecnológico",
-      // SOLUCIÓN: Usamos la imagen proporcionada de OneDrive. Flag 'isPhoto' para ajustar estilos.
       image: "https://1drv.ms/i/c/176b0767a5ca5a26/IQTTAjvhZyOCRq7BBP8--dcAAZ1WqOPlbxV_-kh7YYRWSD4?height=660",
       isPhoto: true,
       bio: "Experto en implementación LMS y herramientas digitales. Se encarga de la configuración de Moodle, la integración de H5P y de asegurar la accesibilidad técnica y el soporte offline.",
@@ -237,50 +234,56 @@ const About: React.FC = () => {
           </div>
        </section>
 
-       {/* Pillars Section */}
+       {/* Misión, Visión y Valores (Pillars) - Explicit for University Indicator */}
        <section className="py-20 bg-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-dark">Nuestros Pilares</h2>
-                <p className="text-gray-500 mt-2">Los fundamentos que guían cada uno de nuestros proyectos.</p>
+                <span className="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">Identidad Corporativa</span>
+                <h2 className="text-3xl font-bold text-dark">Misión, Visión y Valores</h2>
+                <p className="text-gray-500 mt-2">Los fundamentos estratégicos que definen nuestra identidad.</p>
              </div>
              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Misión */}
                 <div className="p-8 bg-light rounded-2xl border-t-4 border-primary hover:shadow-xl hover:-translate-y-1 transition-all group">
                    <div className="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                      <Lightbulb className="h-7 w-7" />
+                      <Target className="h-7 w-7" />
                    </div>
-                   <h3 className="text-xl font-bold mb-3 text-dark">Innovación Situada</h3>
-                   <p className="text-gray-500 leading-relaxed">
-                      No usamos tecnología por moda. Implementamos soluciones donde la herramienta sirve al propósito pedagógico.
-                   </p>
-                </div>
-                <div className="p-8 bg-light rounded-2xl border-t-4 border-accent hover:shadow-xl hover:-translate-y-1 transition-all group">
-                   <div className="w-14 h-14 bg-purple-100 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
-                      <Users className="h-7 w-7" />
-                   </div>
-                   <h3 className="text-xl font-bold mb-3 text-dark">Accesibilidad Universal</h3>
-                   <p className="text-gray-500 leading-relaxed">
-                      Compromiso total con los estándares WCAG 2.1 y DUA. Diseñamos para que nadie se quede atrás.
+                   <h3 className="text-xl font-bold mb-3 text-dark">Nuestra Misión</h3>
+                   <p className="text-gray-500 leading-relaxed text-sm">
+                      Eliminar la brecha digital en Educación Física mediante formación docente que integre tecnología y movimiento sin fricción.
                    </p>
                 </div>
                 
+                {/* Visión */}
+                <div className="p-8 bg-light rounded-2xl border-t-4 border-accent hover:shadow-xl hover:-translate-y-1 transition-all group">
+                   <div className="w-14 h-14 bg-purple-100 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                      <Compass className="h-7 w-7" />
+                   </div>
+                   <h3 className="text-xl font-bold mb-3 text-dark">Nuestra Visión</h3>
+                   <p className="text-gray-500 leading-relaxed text-sm">
+                      Ser el referente iberoamericano en innovación tecnopedagógica para el deporte, liderando el cambio hacia aulas saludables y digitales.
+                   </p>
+                </div>
+                
+                {/* Valores 1 */}
                 <div className="p-8 bg-light rounded-2xl border-t-4 border-brand-orange hover:shadow-xl hover:-translate-y-1 transition-all group">
                    <div className="w-14 h-14 bg-orange-100 text-brand-orange rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-orange group-hover:text-white transition-colors">
-                      <Puzzle className="h-7 w-7" />
+                      <Heart className="h-7 w-7" />
                    </div>
-                   <h3 className="text-xl font-bold mb-3 text-dark">Metodología ADDIE</h3>
-                   <p className="text-gray-500 leading-relaxed">
-                      Estructura científica en 5 fases (Análisis, Diseño, Desarrollo, Implementación, Evaluación) para asegurar la calidad.
+                   <h3 className="text-xl font-bold mb-3 text-dark">Valores: Inclusión</h3>
+                   <p className="text-gray-500 leading-relaxed text-sm">
+                      Diseño Universal para el Aprendizaje (DUA). Creamos tecnología accesible para que ningún estudiante se quede atrás.
                    </p>
                 </div>
 
+                {/* Valores 2 */}
                 <div className="p-8 bg-light rounded-2xl border-t-4 border-secondary-green hover:shadow-xl hover:-translate-y-1 transition-all group">
                    <div className="w-14 h-14 bg-emerald-100 text-secondary-green rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary-green group-hover:text-white transition-colors">
                       <Leaf className="h-7 w-7" />
                    </div>
-                   <h3 className="text-xl font-bold mb-3 text-dark">Sostenibilidad (REA)</h3>
-                   <p className="text-gray-500 leading-relaxed">
-                      Apostamos por el código abierto y los Recursos Educativos Abiertos (REA) para democratizar el acceso.
+                   <h3 className="text-xl font-bold mb-3 text-dark">Valores: Sostenibilidad</h3>
+                   <p className="text-gray-500 leading-relaxed text-sm">
+                      Fomento de Recursos Educativos Abiertos (REA) y software libre para democratizar la educación de calidad.
                    </p>
                 </div>
              </div>
@@ -364,7 +367,6 @@ const About: React.FC = () => {
                          <ImageWithLoader 
                             src={member.image} 
                             alt={member.name}
-                            // Pasamos las clases específicas que tenían las imágenes originales
                             imgClassName={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${member.isPhoto ? 'object-contain object-bottom' : 'object-contain object-bottom p-4'}`}
                          />
                       </div>
@@ -372,7 +374,6 @@ const About: React.FC = () => {
                       <div className="p-6 md:p-8 flex flex-col flex-grow bg-white relative">
                          {/* Name Container - Adjusted for top alignment and equal height */}
                          <div className="mb-5 pb-5 border-b border-gray-100 flex flex-col justify-start">
-                            {/* min-h-[3.5rem] ensures names align horizontally regardless of line count */}
                             <h3 className={`text-2xl font-black ${member.textColor} mb-2 leading-tight whitespace-pre-line min-h-[3.5rem]`}>
                                {member.name}
                             </h3>

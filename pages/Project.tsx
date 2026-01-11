@@ -25,7 +25,7 @@ const Project: React.FC = () => {
                  Innovar en Movimiento
               </h1>
               <p className="text-xl text-gray-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up delay-100">
-                 La respuesta formativa que <strong>EduMotion Lab</strong> ha diseñado para integrar tecnología y motricidad. Una "Caja de Herramientas" pedagógicas centralizada en <strong>Moodle</strong>.
+                 La respuesta formativa diseñada para integrar tecnología y motricidad. Una metodología basada en el modelo <strong>ADDIE</strong> y centralizada en <strong>Moodle</strong> para garantizar el rigor pedagógico.
               </p>
             </div>
 
@@ -205,7 +205,7 @@ const Project: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. PÚBLICO OBJETIVO - DINAMISMO ASÍNCRONO */}
+      {/* 5. PÚBLICO OBJETIVO */}
       <section className="py-24 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -354,33 +354,33 @@ const Project: React.FC = () => {
 
              {[
                { 
-                 letter: "A", title: "Análisis y Diagnóstico", 
-                 subtitle: "Kit Digital y DigCompEdu",
-                 desc: "Evaluamos la competencia digital inicial y los recursos del centro.",
+                 letter: "A", title: "Fase de Análisis", 
+                 subtitle: "Semana 1",
+                 desc: "Diagnóstico de necesidades y evaluación de competencia digital inicial.",
                  icon: <Search className="h-5 w-5"/>, color: "bg-blue-600"
                },
                { 
-                 letter: "D", title: "Diseño Instruccional", 
-                 subtitle: "Planificación con Trello/Notion",
-                 desc: "Estructuramos itinerarios y definimos las SdA usando el Canvas oficial.",
+                 letter: "D", title: "Fase de Diseño", 
+                 subtitle: "Semana 2",
+                 desc: "Planificación de objetivos, competencias y selección de la SdA.",
                  icon: <PenTool className="h-5 w-5"/>, color: "bg-indigo-600"
                },
                { 
-                 letter: "D", title: "Desarrollo de Recursos", 
-                 subtitle: "Entorno Moodle (EVA)",
-                 desc: "Configuramos el aula virtual, subimos contenidos H5P y preparamos las e-rúbricas.",
+                 letter: "D", title: "Fase de Desarrollo", 
+                 subtitle: "Semana 3 y 4",
+                 desc: "Producción de recursos digitales con las herramientas del curso.",
                  icon: <Code className="h-5 w-5"/>, color: "bg-purple-600"
                },
                { 
-                 letter: "I", title: "Implementación Piloto", 
-                 subtitle: "Acción en el Patio",
-                 desc: "Uso real de Plickers y Actionbound con los alumnos. Tutorización experta.",
+                 letter: "I", title: "Fase de Implementación", 
+                 subtitle: "Semana 5",
+                 desc: "Puesta en práctica del piloto con el alumnado en el aula/patio.",
                  icon: <Play className="h-5 w-5"/>, color: "bg-pink-600"
                },
                { 
-                 letter: "E", title: "Evaluación de Impacto", 
-                 subtitle: "Informes Competenciales",
-                 desc: "Analizamos resultados en CoRubrics y medimos la mejora del tiempo motor.",
+                 letter: "E", title: "Fase de Evaluación", 
+                 subtitle: "Semana 6",
+                 desc: "Medición de impacto y entrega del proyecto final.",
                  icon: <BarChart2 className="h-5 w-5"/>, color: "bg-brand-orange"
                },
              ].map((phase, idx) => (
@@ -396,11 +396,10 @@ const Project: React.FC = () => {
 
                      <div className="flex items-center gap-3 mb-2 text-gray-400 font-bold text-xs uppercase tracking-widest">
                         {phase.icon}
-                        <span>Fase {idx + 1}</span>
+                        <span>{phase.subtitle}</span>
                      </div>
                      <h3 className="text-2xl font-bold text-dark mb-1">{phase.title}</h3>
-                     <h4 className="text-primary font-medium mb-4">{phase.subtitle}</h4>
-                     <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+                     <p className="text-gray-500 leading-relaxed text-sm md:text-base mt-2">
                         {phase.desc}
                      </p>
                   </div>
@@ -410,7 +409,7 @@ const Project: React.FC = () => {
 
           <div className="mt-12 text-center">
              <Link to="/program" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
-                Ver desglose de Herramientas Digitales <ArrowRight className="h-5 w-5" />
+                Ver detalle de cada semana <ArrowRight className="h-5 w-5" />
              </Link>
           </div>
         </div>

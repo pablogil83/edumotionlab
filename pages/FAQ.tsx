@@ -16,54 +16,60 @@ interface FAQItem {
 }
 
 const faqData: FAQItem[] = [
-  // 1. Mandatory Question (General/Audience)
+  // GENERAL
   {
     id: 1,
     category: 'General',
     question: "¿A quién está dirigido Innovar en Movimiento?",
-    answer: "Principalmente a docentes de Educación Física de Secundaria y Bachillerato que quieren digitalizar sus clases sin perder la esencia motriz. También es ideal para opositores que buscan diferenciar su programación y equipos directivos que diseñan el Plan Digital de Centro."
+    answer: "Este curso está diseñado específicamente para docentes de Educación Física (Secundaria, Bachillerato y FP) que buscan digitalizar su asignatura sin perder tiempo de actividad motriz. También es ideal para opositores que desean diferenciar su programación con el modelo ADDIE y para equipos directivos que implementan el Plan Digital de Centro."
   },
-  // 2. Mandatory Question (Methodology/LOMLOE)
   {
     id: 2,
-    category: 'Metodología',
-    question: "¿Está el curso actualizado a la LOMLOE?",
-    answer: "Totalmente. El curso no solo cumple la normativa, sino que la utiliza como base. Aprenderás a diseñar Situaciones de Aprendizaje (SdA), evaluar competencias específicas mediante descriptores operativos y alinear tu programación con el perfil de salida."
+    category: 'General',
+    question: "¿Cuál es la carga lectiva real?",
+    answer: "El curso certifica 30 horas de formación repartidas en 6 semanas. Seguimos un enfoque 'Learning by doing', por lo que gran parte del tiempo lo dedicarás a crear materiales que podrás usar directamente en tus clases al día siguiente, optimizando así tu tiempo de trabajo personal."
   },
-  // 3. Mandatory Question (Technical/Materials)
+  
+  // METODOLOGÍA
   {
     id: 3,
-    category: 'Técnico',
-    question: "¿Necesito materiales caros para aplicar esto en clase?",
-    answer: "No. Nuestra filosofía es la 'Tecnología Invisible'. Enseñamos estrategias BYOD (trae tu propio dispositivo) y uso de materiales low-cost. Si tienes un móvil y conos, tienes un laboratorio digital. No necesitas comprar gafas VR ni sensores caros para empezar."
+    category: 'Metodología',
+    question: "¿Cómo se evalúa el curso? (ABR vs ABP)",
+    answer: "Utilizamos una 'Tríada de Evaluación' sin exámenes teóricos. Tu nota se compone de: 1) Evaluación Diagnóstica inicial, 2) Evaluación Formativa mediante Retos Semanales (Metodología ABR) que suman puntos, y 3) Evaluación Sumativa basada en la entrega y defensa de tu Proyecto Final (ABP), que consiste en una Situación de Aprendizaje completa."
   },
-  // 4. Mandatory Question (Certification)
   {
     id: 4,
-    category: 'Certificación',
-    question: "¿Es válida la certificación para oposiciones?",
-    answer: "Sí. Al completar las 30 horas de formación, recibirás un certificado de formación permanente del profesorado, válido para el baremo de méritos en oposiciones y sexenios, conforme a la normativa vigente de formación continua."
+    category: 'Metodología',
+    question: "¿Por qué utilizáis el modelo ADDIE?",
+    answer: "Huimos de la improvisación. ADDIE (Análisis, Diseño, Desarrollo, Implementación, Evaluación) es el estándar científico del diseño instruccional. Te enseñamos a estructurar tu innovación paso a paso para asegurar que la tecnología responda a necesidades pedagógicas reales y no sea un simple adorno."
   },
-  // 5. Mandatory Question (Technical/Connectivity)
   {
     id: 5,
-    category: 'Técnico',
-    question: "¿Qué pasa si no tengo buena conexión en el patio?",
-    answer: "Es la realidad de muchos centros, y por eso nuestro método incluye el diseño Offline. Aprenderás a crear recursos descargables, trabajar con códigos QR impresos y redes locales que no dependen de la Wi-Fi del centro para funcionar."
+    category: 'Metodología',
+    question: "¿Cómo se integra con la LOMLOE?",
+    answer: "Totalmente alineado. Durante la 'Fase de Diseño' (Semana 2), aprenderás a vincular tus actividades con las Competencias Específicas y los Descriptores Operativos del Perfil de Salida. El objetivo final es que diseñes una Situación de Aprendizaje (SdA) lista para el aula."
   },
-  // Extra: ADDIE Methodology
+
+  // TÉCNICO
   {
     id: 6,
-    category: 'Metodología',
-    question: "¿Qué es el modelo ADDIE y por qué lo usáis?",
-    answer: "ADDIE (Análisis, Diseño, Desarrollo, Implementación, Evaluación) es el estándar de oro en el diseño instruccional. Lo usamos para garantizar que tus Situaciones de Aprendizaje no sean improvisadas, sino que sigan una estructura científica y medible que garantice resultados."
+    category: 'Técnico',
+    question: "¿Qué herramientas aprenderé a usar?",
+    answer: "Nos centramos en la 'Tecnología Invisible'. En la fase de Desarrollo (Semanas 3 y 4) dominarás: Kinovea (análisis biomecánico), Strava (gamificación y GPS), Genially (contenidos interactivos) y Moodle (gestión del aula virtual o EVA)."
   },
-  // Extra: DUA
   {
     id: 7,
-    category: 'Metodología',
-    question: "¿Cómo se aplica el DUA en este programa?",
-    answer: "La Inclusión Radical es uno de nuestros pilares. Enseñamos a aplicar el Diseño Universal para el Aprendizaje creando materiales multinivel, usando subtítulos en vídeos, lecturas fáciles y ofreciendo opciones de respuesta motriz variadas para atender a toda la diversidad del aula."
+    category: 'Técnico',
+    question: "¿Qué pasa si no tengo buena conexión en el patio?",
+    answer: "Es una realidad común. Por eso, el módulo de Implementación incluye estrategias 'Offline'. Te enseñaremos a trabajar con Plickers (códigos QR impresos), descargas previas y redes locales para que la tecnología funcione independientemente de la Wi-Fi del centro."
+  },
+
+  // CERTIFICACIÓN
+  {
+    id: 8,
+    category: 'Certificación',
+    question: "¿Es válida la certificación para oposiciones y sexenios?",
+    answer: "Sí. Al completar satisfactoriamente el curso y el proyecto final, recibirás un certificado de formación permanente del profesorado de 30 horas, válido para el baremo de méritos en oposiciones y para la solicitud de sexenios, conforme a la normativa vigente de formación continua."
   }
 ];
 
@@ -152,7 +158,7 @@ const FAQ: React.FC = () => {
             Preguntas Frecuentes
           </h1>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Resolvemos tus dudas sobre el programa, la normativa LOMLOE y la implementación técnica.
+            Resolvemos tus dudas sobre el modelo ADDIE, la metodología ABR/ABP y la certificación oficial.
           </p>
           
           <div className="relative max-w-xl mx-auto mt-8 group">
@@ -161,7 +167,7 @@ const FAQ: React.FC = () => {
             </div>
             <input 
               type="text" 
-              placeholder="Buscar: 'SdA', 'Oposiciones', 'Wifi'..." 
+              placeholder="Buscar: 'ADDIE', 'Oposiciones', 'Moodle'..." 
               className="block w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-200 focus:border-primary rounded-2xl outline-none transition-all shadow-sm hover:border-gray-300" 
               value={searchTerm} 
               onChange={(e) => setSearchTerm(e.target.value)} 
@@ -243,7 +249,7 @@ const FAQ: React.FC = () => {
       <section className="py-12 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h3 className="text-2xl font-bold text-dark mb-4">¿Tienes más preguntas?</h3>
-            <p className="text-gray-500 mb-6">Nuestro equipo académico está disponible para resolver dudas específicas.</p>
+            <p className="text-gray-500 mb-6">Nuestro equipo pedagógico está disponible para resolver dudas sobre el itinerario formativo.</p>
             <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all shadow-sm hover:shadow-lg">
                Contactar con Soporte <ArrowRight className="h-5 w-5" />
             </Link>

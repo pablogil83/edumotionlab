@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone, Facebook, Linkedin, Instagram, Activity, ClipboardList } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-blue-50 border-t border-blue-100 pt-16 pb-8 transition-colors duration-300">
@@ -26,28 +28,27 @@ const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Consultoría educativa especializada en innovación y tecnología para la educación física.
-              Transformamos el patio en un aula inteligente.
+              {t('stats.desc')}
             </p>
           </div>
 
           {/* Sitemap */}
           <div>
-            <h4 className="font-bold text-dark mb-4">Mapa del Sitio</h4>
+            <h4 className="font-bold text-dark mb-4">{t('footer.sitemap')}</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link to="/" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Inicio</Link></li>
-              <li><Link to="/project" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">El Proyecto</Link></li>
-              <li><Link to="/program" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Programa Formativo</Link></li>
-              <li><Link to="/resources" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Recursos Digitales</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.home')}</Link></li>
+              <li><Link to="/project" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.project')}</Link></li>
+              <li><Link to="/program" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.program')}</Link></li>
+              <li><Link to="/resources" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.resources')}</Link></li>
               {/* Cambio de 'Nosotros' a 'EduMotion Lab' */}
-              <li><Link to="/about" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">EduMotion Lab</Link></li>
-              <li><Link to="/faq" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">Preguntas Frecuentes</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.about')}</Link></li>
+              <li><Link to="/faq" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.faq')}</Link></li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="font-bold text-dark mb-4">Legal</h4>
+            <h4 className="font-bold text-dark mb-4">{t('footer.legal')}</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li><Link to="/legal-notice" className="hover:text-primary transition-colors">Aviso Legal</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Política de Privacidad</Link></li>
@@ -58,7 +59,7 @@ const Footer: React.FC = () => {
 
           {/* Contact - AHORA COMPLETAMENTE CLICABLES */}
           <div className="relative z-50">
-            <h4 className="font-bold text-dark mb-4">Contacto</h4>
+            <h4 className="font-bold text-dark mb-4">{t('nav.contact')}</h4>
             <ul className="space-y-3 text-sm text-gray-600 mb-6">
               <li>
                 {/* Lógica: mailto para abrir cliente de correo - Todo el bloque es clicable */}
@@ -95,13 +96,13 @@ const Footer: React.FC = () => {
               className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-primary to-primary-dark text-white font-bold py-3.5 px-6 rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-1 relative z-50"
             >
               <ClipboardList className="h-6 w-6 text-white/90" />
-              <span className="text-lg">Formulario</span>
+              <span className="text-lg">{t('footer.contact_btn')}</span>
             </Link>
           </div>
         </div>
 
         <div className="border-t border-blue-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500">© {currentYear} EduMotion Lab. Todos los derechos reservados.</p>
+          <p className="text-xs text-gray-500">© {currentYear} EduMotion Lab. {t('footer.rights')}</p>
           <div className="flex gap-4 items-center">
             {/* X (Twitter) */}
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-black rounded-full transition-all" aria-label="X">

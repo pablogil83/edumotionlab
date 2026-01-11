@@ -4,13 +4,17 @@ import {
   Puzzle, Trophy, Accessibility, 
   Search, Layout, Layers, Rocket, 
   GraduationCap, Palette, MousePointerClick, FileCode, Box,
-  ClipboardCheck, Users, ShieldCheck, CheckCircle, Sparkles, User, ArrowRight, Activity
+  ClipboardCheck, Users, ShieldCheck, CheckCircle, Sparkles, User, ArrowRight, Activity, Brain, Target, Lightbulb, Video,
+  BookOpen
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const Program: React.FC = () => {
+  const { t } = useLanguage();
+
   const handleDownload = () => {
-      alert("Iniciando descarga de Guía_Docente_EduMotion.pdf...");
+      alert("Iniciando descarga de Guía_Docente_ADDIE_2026.pdf...");
   };
 
   return (
@@ -24,16 +28,16 @@ const Program: React.FC = () => {
              <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12">
                 <div className="flex flex-col gap-6 max-w-3xl">
                    <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary animate-fade-in">
-                      <Sparkles className="h-4 w-4" /> Convocatoria Abierta
+                      <Sparkles className="h-4 w-4" /> Matrícula Abierta
                    </div>
                    
                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-dark tracking-tight leading-[1.1] animate-fade-in-up">
-                      Estructura del Curso: <br/>
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent">Innovar en Movimiento</span>
+                      Estructura del Programa: <br/>
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent">Modelo ADDIE</span>
                    </h1>
                    
                    <p className="text-lg text-gray-500 max-w-2xl leading-relaxed animate-fade-in-up delay-100">
-                      Un itinerario de especialización práctica donde aprenderás a dominar nuestra <strong>Caja de Herramientas Digitales</strong> dentro del Entorno Virtual <strong>Moodle (EVA)</strong>.
+                      Un itinerario de <strong>6 semanas</strong> diseñado para transformar tu práctica docente. No aprendemos herramientas sueltas; aplicamos tecnología para resolver problemas reales en el gimnasio siguiendo el estándar científico de diseño instruccional.
                    </p>
 
                    <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto mt-2 animate-fade-in-up delay-200">
@@ -41,7 +45,7 @@ const Program: React.FC = () => {
                         onClick={handleDownload}
                         className="flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/30 hover:bg-primary-dark hover:-translate-y-1 transition-all w-full sm:w-auto"
                       >
-                         <Download className="h-5 w-5" /> Descargar Guía Docente (PDF)
+                         <Download className="h-5 w-5" /> {t('program.download')} (PDF)
                       </button>
                    </div>
                 </div>
@@ -53,15 +57,15 @@ const Program: React.FC = () => {
        <section className="py-12 lg:py-16 bg-light">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="mb-10 text-center md:text-left">
-                <h2 className="text-3xl font-bold text-dark tracking-tight">Detalles del Programa</h2>
-                <p className="text-gray-500 mt-2">Formación reconocida y alineada con los estándares europeos DigCompEdu y la LOMLOE.</p>
+                <h2 className="text-3xl font-bold text-dark tracking-tight">Ficha Técnica del Curso</h2>
+                <p className="text-gray-500 mt-2">Formación certificada para el desarrollo de la competencia digital docente.</p>
              </div>
              
              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                   { icon: <Laptop className="h-8 w-8" />, title: "Plataforma Moodle", desc: "Acceso 24/7 a nuestro Campus Virtual (EVA) con recursos H5P y foros de debate.", color: "text-primary", bg: "bg-blue-50" },
-                   { icon: <Clock className="h-8 w-8" />, title: "Carga de 30 Horas", desc: "Distribuidas en 6 semanas. Formato intensivo compatible con tu horario lectivo.", color: "text-brand-orange", bg: "bg-orange-50" },
-                   { icon: <BarChart className="h-8 w-8" />, title: "Evaluación Competencial", desc: "Aprende a evaluar por Descriptores Operativos usando herramientas digitales.", color: "text-secondary-green-dark", bg: "bg-emerald-50" }
+                   { icon: <Laptop className="h-8 w-8" />, title: "Modalidad Online Tutorizado", desc: "Aprendizaje flexible a través de nuestro Campus Virtual Moodle (EVA) con soporte continuo.", color: "text-primary", bg: "bg-blue-50" },
+                   { icon: <Clock className="h-8 w-8" />, title: "30 Horas / 6 Semanas", desc: "Formato intensivo compatible con tu horario lectivo. Enfoque 'Learning by doing'.", color: "text-brand-orange", bg: "bg-orange-50" },
+                   { icon: <Brain className="h-8 w-8" />, title: "Metodología Dual", desc: "Aprendizaje Basado en Retos (ABR) semanales + Aprendizaje Basado en Proyectos (ABP) final.", color: "text-secondary-green-dark", bg: "bg-emerald-50" }
                 ].map((item, idx) => (
                    <div key={idx} className="group flex flex-col p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-transparent transition-all duration-300">
                       <div className={`h-16 w-16 rounded-2xl ${item.bg} flex items-center justify-center ${item.color} mb-6 group-hover:scale-110 transition-transform`}>
@@ -75,99 +79,111 @@ const Program: React.FC = () => {
           </div>
        </section>
 
-       {/* 3. METODOLOGÍA DIDÁCTICA */}
-       <section className="py-16 lg:py-24 bg-white border-y border-gray-100 overflow-hidden">
+       {/* 3. MAPA DE COMPETENCIAS (NEW Explicit Section for University Indicator) */}
+       <section className="py-20 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div className="flex flex-col lg:flex-row gap-16 items-center">
-                <div className="w-full lg:w-1/2 order-2 lg:order-1 relative">
-                   <div className="relative aspect-square md:aspect-[4/3] w-full max-w-md mx-auto">
-                      <svg className="absolute inset-0 w-full h-full -z-10 pointer-events-none opacity-30" viewBox="0 0 400 400" preserveAspectRatio="none">
-                         <path d="M200 30 L80 320" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="6 4" />
-                         <path d="M200 30 L320 320" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="6 4" />
-                         <path d="M80 320 L320 320" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="6 4" />
-                         <path d="M200 200 L200 30" stroke="#a855f7" strokeWidth="2" strokeOpacity="0.3" />
-                         <path d="M200 200 L80 320" stroke="#a855f7" strokeWidth="2" strokeOpacity="0.3" />
-                         <path d="M200 200 L320 320" stroke="#a855f7" strokeWidth="2" strokeOpacity="0.3" />
-                         <circle cx="200" cy="200" r="140" stroke="#e2e8f0" strokeWidth="1" fill="none" strokeDasharray="4 4" className="animate-[spin_20s_linear_infinite]" />
-                      </svg>
+             <div className="text-center mb-12">
+                <span className="text-accent font-bold text-sm uppercase tracking-wider mb-2 block">Perfil de Salida</span>
+                <h2 className="text-3xl font-bold text-dark">Mapa de Competencias Desarrolladas</h2>
+                <p className="text-gray-500 mt-2">Al finalizar el curso, habrás adquirido destrezas en tres áreas clave:</p>
+             </div>
 
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                         <div className="relative group cursor-default">
-                            <div className="absolute inset-0 bg-accent rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                            <div className="w-28 h-28 rounded-full bg-gradient-to-br from-indigo-600 via-accent to-pink-500 text-white shadow-2xl shadow-accent/30 flex flex-col items-center justify-center relative z-10 animate-[bounceSubtle_4s_infinite]">
-                               <Layers className="h-8 w-8 mb-1 opacity-90" />
-                               <span className="text-xl font-black tracking-widest drop-shadow-md">ADDIE</span>
-                               <span className="text-[9px] uppercase font-bold opacity-70 tracking-wider mt-0.5">Modelo</span>
-                            </div>
-                         </div>
-                      </div>
-
-                      <div className="absolute top-[-15%] left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-pointer z-20">
-                         <div className="w-24 h-24 rounded-2xl bg-white border-2 border-pink-100 text-pink-600 shadow-xl shadow-pink-100/50 flex items-center justify-center mb-2 transform group-hover:-translate-y-2 group-hover:bg-pink-50 transition-all duration-300">
-                            <Laptop className="h-10 w-10" />
-                         </div>
-                         <div className="bg-white px-3 py-1 rounded-full shadow border border-gray-100 font-bold text-gray-600 text-xs uppercase tracking-wide group-hover:text-pink-600 group-hover:border-pink-200 transition-colors">
-                            Apps & Moodle
-                         </div>
-                      </div>
-
-                      <div className="absolute bottom-[10%] left-[5%] flex flex-col items-center group cursor-pointer z-20">
-                         <div className="w-24 h-24 rounded-2xl bg-white border-2 border-orange-100 text-brand-orange shadow-xl shadow-orange-100/50 flex items-center justify-center mb-2 transform group-hover:-translate-y-2 group-hover:bg-orange-50 transition-all duration-300">
-                            <Puzzle className="h-10 w-10" />
-                         </div>
-                         <div className="bg-white px-3 py-1 rounded-full shadow border border-gray-100 font-bold text-gray-600 text-xs uppercase tracking-wide group-hover:text-brand-orange group-hover:border-orange-200 transition-colors">
-                            SdA Prácticas
-                         </div>
-                      </div>
-
-                      <div className="absolute bottom-[10%] right-[5%] flex flex-col items-center group cursor-pointer z-20">
-                         <div className="w-24 h-24 rounded-2xl bg-white border-2 border-emerald-100 text-secondary-green-dark shadow-xl shadow-emerald-100/50 flex items-center justify-center mb-2 transform group-hover:-translate-y-2 group-hover:bg-emerald-50 transition-all duration-300">
-                            <Accessibility className="h-10 w-10" />
-                         </div>
-                         <div className="bg-white px-3 py-1 rounded-full shadow border border-gray-100 font-bold text-gray-600 text-xs uppercase tracking-wide group-hover:text-secondary-green-dark group-hover:border-emerald-200 transition-colors">
-                            DUA
-                         </div>
-                      </div>
+             <div className="grid md:grid-cols-3 gap-8">
+                {/* Competencia Digital */}
+                <div className="bg-light p-8 rounded-2xl border-t-4 border-blue-500">
+                   <div className="flex items-center gap-3 mb-4">
+                      <Monitor className="h-6 w-6 text-blue-600" />
+                      <h3 className="text-xl font-bold text-dark">Digital (DigCompEdu)</h3>
                    </div>
+                   <ul className="space-y-3 text-sm text-gray-600">
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-blue-500 mt-0.5" /> Creación de recursos digitales (Área 2).</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-blue-500 mt-0.5" /> Enseñanza y aprendizaje (Área 3).</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-blue-500 mt-0.5" /> Empoderamiento del alumnado (Área 5).</li>
+                   </ul>
                 </div>
 
-                <div className="w-full lg:w-1/2 order-1 lg:order-2">
-                   <div className="mb-8">
-                      <h2 className="text-3xl font-bold text-dark tracking-tight mb-4">Metodología Basada en la Práctica</h2>
-                      <p className="text-gray-500 text-lg">No solo teoría. Te damos una Caja de Herramientas lista para usar en Moodle y en tu patio.</p>
+                {/* Competencia Pedagógica */}
+                <div className="bg-light p-8 rounded-2xl border-t-4 border-purple-500">
+                   <div className="flex items-center gap-3 mb-4">
+                      <BookOpen className="h-6 w-6 text-purple-600" />
+                      <h3 className="text-xl font-bold text-dark">Pedagógica (LOMLOE)</h3>
                    </div>
-                   
-                   <div className="space-y-8">
-                      {/* Pilar 1 */}
-                      <div className="flex gap-6 group">
-                         <div className="shrink-0 h-14 w-14 rounded-2xl bg-pink-50 flex items-center justify-center text-pink-600 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
-                            <Laptop className="h-7 w-7" />
-                         </div>
+                   <ul className="space-y-3 text-sm text-gray-600">
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-purple-500 mt-0.5" /> Diseño de Situaciones de Aprendizaje.</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-purple-500 mt-0.5" /> Evaluación por Descriptores Operativos.</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-purple-500 mt-0.5" /> Aplicación del Diseño Universal (DUA).</li>
+                   </ul>
+                </div>
+
+                {/* Competencia Personal */}
+                <div className="bg-light p-8 rounded-2xl border-t-4 border-orange-500">
+                   <div className="flex items-center gap-3 mb-4">
+                      <User className="h-6 w-6 text-orange-600" />
+                      <h3 className="text-xl font-bold text-dark">Personal (Soft Skills)</h3>
+                   </div>
+                   <ul className="space-y-3 text-sm text-gray-600">
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-orange-500 mt-0.5" /> Gestión de proyectos ágiles.</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-orange-500 mt-0.5" /> Liderazgo e innovación educativa.</li>
+                      <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-orange-500 mt-0.5" /> Trabajo colaborativo en red.</li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </section>
+
+       {/* 4. METODOLOGÍA Y EVALUACIÓN */}
+       <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div className="grid lg:grid-cols-2 gap-16">
+                {/* Metodología */}
+                <div>
+                   <span className="text-accent font-bold text-sm uppercase tracking-wider mb-2 block">Cómo Aprendemos</span>
+                   <h2 className="text-3xl font-bold text-dark mb-6">Metodología ABR + ABP</h2>
+                   <p className="text-gray-500 mb-6 leading-relaxed">
+                      El curso no consiste en ver vídeos pasivamente. Te proponemos un sistema gamificado donde cada acción cuenta:
+                   </p>
+                   <ul className="space-y-4">
+                      <li className="flex gap-4">
+                         <div className="p-2 bg-purple-50 text-accent rounded-lg h-fit"><Target className="h-5 w-5"/></div>
                          <div>
-                            <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-pink-600 transition-colors">Gestión Digital del Aula</h3>
-                            <p className="text-gray-500 leading-relaxed">Organiza tu programación didáctica con <strong>Trello y Notion</strong>. Usa el Canvas SdA para estructurar tus Situaciones de Aprendizaje.</p>
+                            <h4 className="font-bold text-dark">Retos Semanales (ABR)</h4>
+                            <p className="text-sm text-gray-600">Pequeñas tareas prácticas (configurar una rúbrica, grabar un gesto técnico) que suman puntos semana a semana.</p>
+                         </div>
+                      </li>
+                      <li className="flex gap-4">
+                         <div className="p-2 bg-blue-50 text-primary rounded-lg h-fit"><Layers className="h-5 w-5"/></div>
+                         <div>
+                            <h4 className="font-bold text-dark">Proyecto Final (ABP)</h4>
+                            <p className="text-sm text-gray-600">Construcción progresiva de tu propia Situación de Aprendizaje (SdA) que defenderás al final del curso.</p>
+                         </div>
+                      </li>
+                   </ul>
+                </div>
+
+                {/* Evaluación */}
+                <div>
+                   <span className="text-secondary-green-dark font-bold text-sm uppercase tracking-wider mb-2 block">Cómo Evaluamos</span>
+                   <h2 className="text-3xl font-bold text-dark mb-6">La Tríada de Evaluación</h2>
+                   <div className="bg-light p-6 rounded-2xl border border-gray-100 space-y-4">
+                      <div className="flex items-center gap-4 p-3 bg-white rounded-xl shadow-sm">
+                         <div className="font-black text-gray-300 text-2xl">01</div>
+                         <div>
+                            <h4 className="font-bold text-dark">Diagnóstica</h4>
+                            <p className="text-xs text-gray-500">Cuestionario inicial de competencia digital y análisis DAFO del centro.</p>
                          </div>
                       </div>
-
-                      {/* Pilar 2 */}
-                      <div className="flex gap-6 group">
-                         <div className="shrink-0 h-14 w-14 rounded-2xl bg-orange-50 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors duration-300">
-                            <Puzzle className="h-7 w-7" />
-                         </div>
+                      <div className="flex items-center gap-4 p-3 bg-white rounded-xl shadow-sm">
+                         <div className="font-black text-gray-300 text-2xl">02</div>
                          <div>
-                            <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-brand-orange transition-colors">Evaluación LOMLOE</h3>
-                            <p className="text-gray-500 leading-relaxed">Olvídate del Excel. Usa <strong>iDoceo y CoRubrics</strong> para calificar criterios de evaluación de forma automática y transparente.</p>
+                            <h4 className="font-bold text-dark">Formativa</h4>
+                            <p className="text-xs text-gray-500">Feedback continuo en los foros de Moodle y superación de retos semanales.</p>
                          </div>
                       </div>
-
-                      {/* Pilar 3 */}
-                      <div className="flex gap-6 group">
-                         <div className="shrink-0 h-14 w-14 rounded-2xl bg-emerald-50 flex items-center justify-center text-secondary-green-dark group-hover:bg-secondary-green-dark group-hover:text-white transition-colors duration-300">
-                            <Accessibility className="h-7 w-7" />
-                         </div>
+                      <div className="flex items-center gap-4 p-3 bg-white rounded-xl shadow-sm border-l-4 border-secondary-green">
+                         <div className="font-black text-secondary-green text-2xl">03</div>
                          <div>
-                            <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-secondary-green-dark transition-colors">Gamificación y Salud</h3>
-                            <p className="text-gray-500 leading-relaxed">Crea Breakouts con <strong>Genially</strong>, mide el rendimiento con <strong>Kinovea</strong> y gamifica el entorno con <strong>Actionbound</strong>.</p>
+                            <h4 className="font-bold text-dark">Sumativa</h4>
+                            <p className="text-xs text-gray-500">Entrega y defensa del Proyecto de Innovación (SdA) diseñado durante el curso.</p>
                          </div>
                       </div>
                    </div>
@@ -176,12 +192,17 @@ const Program: React.FC = () => {
           </div>
        </section>
 
-       {/* 4. ESQUEMA DE BLOQUES (Updated to Specific Tools) */}
+       {/* 5. ESQUEMA DE BLOQUES (ADDIE WEEKS 1-6) */}
        <section className="py-20 bg-light overflow-hidden">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="text-center mb-20">
-                <h2 className="text-3xl font-bold text-dark tracking-tight">Cronograma: Tu Caja de Herramientas</h2>
-                <p className="text-gray-500 mt-3 max-w-2xl mx-auto">Un itinerario progresivo para dominar las herramientas clave del ecosistema EduMotion.</p>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-500 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+                   <Layers className="h-4 w-4 text-primary" /> Cronograma Oficial
+                </div>
+                <h2 className="text-3xl font-bold text-dark tracking-tight">Estructura Modular ADDIE</h2>
+                <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
+                   El curso sigue las 5 fases del diseño instruccional, garantizando que tu innovación tenga una base sólida antes de llegar al patio.
+                </p>
              </div>
              
              <div className="relative">
@@ -190,45 +211,44 @@ const Program: React.FC = () => {
                 <div className="space-y-12 md:space-y-24">
                    {[
                       { 
-                         title: "Módulo 1: Planificación Ágil", 
-                         subtitle: "Trello & Notion", 
-                         desc: "Gestión de proyectos y programación didáctica. Uso de la plantilla Canvas SdA para diseñar Situaciones de Aprendizaje.", 
-                         icon: <Layout className="h-8 w-8" />,
+                         week: "Semana 1",
+                         title: "Fase de ANÁLISIS", 
+                         subtitle: "El Diagnóstico", 
+                         desc: "Detectamos necesidades reales. Realizamos un análisis DAFO del centro y evaluamos la competencia digital inicial del alumnado.", 
+                         icon: <Search className="h-8 w-8" />,
                          color: "blue"
                       },
                       { 
-                         title: "Módulo 2: Metodologías Activas", 
-                         subtitle: "Actionbound & ClassCraft", 
-                         desc: "Diseño de gymkhanas geolocalizadas y gestión del aula gamificada mediante roles y puntos de experiencia (XP).", 
-                         icon: <Puzzle className="h-8 w-8" />,
+                         week: "Semana 2",
+                         title: "Fase de DISEÑO", 
+                         subtitle: "La Hoja de Ruta", 
+                         desc: "Definimos los objetivos de aprendizaje y seleccionamos las competencias específicas LOMLOE y los descriptores operativos a trabajar.", 
+                         icon: <Layout className="h-8 w-8" />,
                          color: "purple"
                       },
                       { 
-                         title: "Módulo 3: Creación de Contenidos", 
-                         subtitle: "Genially & H5P", 
-                         desc: "Diseño de infografías interactivas, Breakouts educativos y vídeos enriquecidos dentro de Moodle.", 
-                         icon: <Palette className="h-8 w-8" />,
-                         color: "pink"
+                         week: "Semana 3 y 4",
+                         title: "Fase de DESARROLLO", 
+                         subtitle: "Creación de Contenidos", 
+                         desc: "Aprendizaje técnico de las herramientas. Creación de recursos didácticos con Kinovea, Strava, Genially y configuración del aula en Moodle.", 
+                         icon: <Wrench className="h-8 w-8" />, // Changed to Wrench/Tools
+                         color: "pink",
+                         isDevelopment: true // Flag to add Resource Link
                       },
                       { 
-                         title: "Módulo 4: Rendimiento y Salud", 
-                         subtitle: "Kinovea & Strava", 
-                         desc: "Análisis biomecánico del gesto deportivo y seguimiento de la actividad física extraescolar mediante wearables.", 
-                         icon: <Activity className="h-8 w-8" />,
-                         color: "teal"
-                      },
-                      { 
-                         title: "Módulo 5: Evaluación e Inclusión", 
-                         subtitle: "Plickers, CoRubrics & DUA", 
-                         desc: "Evaluación competencial formativa y diseño de materiales accesibles con el Checklist DUA.", 
-                         icon: <ClipboardCheck className="h-8 w-8" />,
+                         week: "Semana 5",
+                         title: "Fase de IMPLEMENTACIÓN", 
+                         subtitle: "El Piloto en el Patio", 
+                         desc: "Estrategias de gestión de aula y puesta en marcha. Llevamos el proyecto diseñado al entorno real con los alumnos.", 
+                         icon: <Rocket className="h-8 w-8" />,
                          color: "orange"
                       },
                       { 
-                         title: "Módulo 6: Integración Final", 
-                         subtitle: "Ecosistema Moodle", 
-                         desc: "Ensamblaje de todos los recursos en el Entorno Virtual de Aprendizaje (EVA) y proyecto final.", 
-                         icon: <Layers className="h-8 w-8" />,
+                         week: "Semana 6",
+                         title: "Fase de EVALUACIÓN", 
+                         subtitle: "Mejora Continua", 
+                         desc: "Evaluación del impacto del proyecto y calificación del aprendizaje del alumnado. Entrega del Trabajo Final.", 
+                         icon: <BarChart className="h-8 w-8" />,
                          color: "green"
                       }
                    ].map((module, idx) => {
@@ -237,7 +257,6 @@ const Program: React.FC = () => {
                          blue: { text: "text-blue-600", bg: "bg-blue-50", border: "border-blue-500", gradient: "from-blue-400 to-blue-600" },
                          purple: { text: "text-purple-600", bg: "bg-purple-50", border: "border-purple-500", gradient: "from-purple-400 to-purple-600" },
                          pink: { text: "text-pink-600", bg: "bg-pink-50", border: "border-pink-500", gradient: "from-pink-400 to-pink-600" },
-                         teal: { text: "text-teal-600", bg: "bg-teal-50", border: "border-teal-500", gradient: "from-teal-400 to-teal-600" },
                          orange: { text: "text-brand-orange", bg: "bg-orange-50", border: "border-brand-orange", gradient: "from-orange-400 to-orange-600" },
                          green: { text: "text-secondary-green-dark", bg: "bg-emerald-50", border: "border-secondary-green", gradient: "from-emerald-400 to-emerald-600" }
                       };
@@ -248,9 +267,16 @@ const Program: React.FC = () => {
                             <div className={`flex-1 w-full md:w-1/2 pl-16 md:pl-0 mb-4 md:mb-0 ${isLeft ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}`}>
                                <div className={`bg-white p-8 rounded-2xl shadow-sm border-l-4 ${colors.border} hover:shadow-xl transition-all duration-300 relative overflow-hidden group-hover:-translate-y-1`}>
                                   <div className={`absolute right-0 top-0 h-24 w-24 ${colors.bg} rounded-bl-full -mr-10 -mt-10 opacity-50`}></div>
-                                  <h3 className={`text-xl font-black ${colors.text} mb-1 uppercase tracking-wider text-sm`}>{module.title}</h3>
+                                  <h3 className={`text-xl font-black ${colors.text} mb-1 uppercase tracking-wider text-sm`}>{module.week}: {module.title}</h3>
                                   <h4 className="text-xl font-bold text-dark mb-3">{module.subtitle}</h4>
-                                  <p className="text-gray-500 text-sm leading-relaxed">{module.desc}</p>
+                                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{module.desc}</p>
+                                  
+                                  {/* Link to Resources for Development Phase */}
+                                  {module.isDevelopment && (
+                                     <Link to="/resources" className="inline-flex items-center gap-1 text-xs font-bold text-gray-400 hover:text-primary transition-colors border-t border-gray-100 pt-3 w-full justify-end">
+                                        Ver Herramientas del Módulo <ArrowRight className="h-3 w-3" />
+                                     </Link>
+                                  )}
                                 </div>
                             </div>
                             <div className="absolute left-[28px] md:left-1/2 -ml-3.5 w-7 h-7 rounded-full border-4 border-white bg-gray-300 z-10 shadow-sm group-hover:scale-125 transition-transform duration-300" style={{backgroundColor: 'var(--tw-colors-' + module.color + '-500)'}}>
@@ -283,3 +309,9 @@ const Program: React.FC = () => {
 };
 
 export default Program;
+const Monitor = ({className}: {className?: string}) => (
+   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+);
+const Wrench = ({className}: {className?: string}) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+);
