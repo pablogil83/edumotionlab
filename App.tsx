@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AlertTriangle, X } from 'lucide-react';
 import { LanguageProvider } from './context/LanguageContext';
@@ -20,12 +20,27 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiesPolicy from './pages/CookiesPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 
-// Scroll to top component to handle navigation changes
+// Componente ScrollToTop mejorado usando useLayoutEffect para sincronización visual
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  useEffect(() => {
+
+  useLayoutEffect(() => {
+    // Forzar scroll manual desactivando la restauración automática del navegador
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Ejecutar scroll en todos los posibles contenedores
     window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    
+    // Por si acaso el #root tuviera overflow (aunque con el fix de CSS no debería)
+    const root = document.getElementById('root');
+    if (root) root.scrollTop = 0;
+
   }, [pathname]);
+
   return null;
 };
 
