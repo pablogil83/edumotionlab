@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, Facebook, Linkedin, Instagram, Activity, ClipboardList } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, Instagram, Activity, ClipboardList } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer: React.FC = () => {
@@ -12,9 +12,9 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           
-          {/* Brand - Logo igual al Header */}
-          <div className="col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6 group inline-flex">
+          {/* Brand - Logo e Información + REDES SOCIALES AQUÍ */}
+          <div className="col-span-1 flex flex-col">
+            <Link to="/" className="flex items-center gap-3 mb-6 group inline-flex self-start">
               <div className="h-10 w-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all transform group-hover:scale-105">
                 <Activity className="h-6 w-6 text-white" strokeWidth={2.5} />
               </div>
@@ -27,9 +27,42 @@ const Footer: React.FC = () => {
                 </span>
               </div>
             </Link>
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed mb-6">
               Somos un laboratorio de innovación educativa especializado en Educación Física. Fusionamos pedagogía y tecnología para transformar el aprendizaje motriz en las aulas.
             </p>
+
+            {/* Redes Sociales Reubicadas + Newsletter Button */}
+            <div className="flex gap-3 items-center justify-center flex-wrap">
+               <a 
+                 href="https://www.linkedin.com/in/edumotionlab/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="h-10 w-10 flex items-center justify-center rounded-full bg-white text-gray-400 shadow-sm border border-blue-100 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:-translate-y-1 transition-all duration-300 group shrink-0"
+                 aria-label="LinkedIn"
+                 title="Síguenos en LinkedIn"
+               >
+                 <Linkedin className="h-5 w-5" />
+               </a>
+               <a 
+                 href="https://www.instagram.com/edumotionlab/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="h-10 w-10 flex items-center justify-center rounded-full bg-white text-gray-400 shadow-sm border border-blue-100 hover:bg-gradient-to-tr hover:from-[#405DE6] hover:via-[#E1306C] hover:to-[#FFDC80] hover:text-white hover:border-transparent hover:-translate-y-1 transition-all duration-300 group shrink-0"
+                 aria-label="Instagram"
+                 title="Síguenos en Instagram"
+               >
+                 <Instagram className="h-5 w-5" />
+               </a>
+               
+               {/* Botón Newsletter */}
+               <Link 
+                 to="/contact" 
+                 className="flex items-center gap-2 px-4 py-2 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md uppercase tracking-wide"
+                 title="Suscríbete a nuestra newsletter"
+               >
+                 <Mail className="h-3.5 w-3.5" /> <span>Newsletter</span>
+               </Link>
+            </div>
           </div>
 
           {/* Sitemap */}
@@ -40,7 +73,6 @@ const Footer: React.FC = () => {
               <li><Link to="/project" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.project')}</Link></li>
               <li><Link to="/program" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.program')}</Link></li>
               <li><Link to="/resources" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.resources')}</Link></li>
-              {/* Cambio de 'Nosotros' a 'EduMotion Lab' */}
               <li><Link to="/about" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.about')}</Link></li>
               <li><Link to="/faq" className="hover:text-primary transition-colors hover:translate-x-1 inline-block">{t('nav.faq')}</Link></li>
             </ul>
@@ -62,7 +94,6 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-dark mb-4">{t('nav.contact')}</h4>
             <ul className="space-y-3 text-sm text-gray-600 mb-6">
               <li>
-                {/* Lógica: mailto para abrir cliente de correo - Todo el bloque es clicable */}
                 <a href="mailto:hola@edumotionlab.com" className="flex items-center gap-2 group hover:text-primary transition-colors cursor-pointer">
                   <div className="p-1.5 bg-white text-primary rounded-full shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
                      <Mail className="h-3.5 w-3.5" />
@@ -71,7 +102,6 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                {/* Lógica: tel para abrir aplicación de llamadas - Todo el bloque es clicable */}
                 <a href="tel:+34900000000" className="flex items-center gap-2 group hover:text-primary transition-colors cursor-pointer">
                    <div className="p-1.5 bg-white text-primary rounded-full shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
                       <Phone className="h-3.5 w-3.5" />
@@ -80,7 +110,6 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                {/* Lógica: Link para ir a la página de contacto (mapa) - Todo el bloque es clicable */}
                 <Link to="/contact" className="flex items-start gap-2 group hover:text-primary transition-colors cursor-pointer">
                    <div className="p-1.5 bg-white text-primary rounded-full shadow-sm group-hover:bg-primary group-hover:text-white transition-colors mt-0.5">
                       <MapPin className="h-3.5 w-3.5" />
@@ -90,7 +119,6 @@ const Footer: React.FC = () => {
               </li>
             </ul>
             
-            {/* Botón de Contacto - Diseño Mejorado: Icono Cambiado a ClipboardList */}
             <Link 
               to="/contact" 
               className="group flex items-center justify-center gap-2 w-full bg-gradient-to-r from-primary to-primary-dark text-white font-bold py-3.5 px-6 rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-1 relative z-50"
@@ -101,28 +129,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-blue-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Bottom Bar Centrado */}
+        <div className="border-t border-blue-200 pt-8 text-center">
           <p className="text-xs text-gray-500">© {currentYear} EduMotion Lab. {t('footer.rights')}</p>
-          <div className="flex gap-4 items-center">
-            {/* X (Twitter) */}
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-black rounded-full transition-all" aria-label="X">
-              <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
-            {/* Instagram */}
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-pink-600 rounded-full transition-all" aria-label="Instagram">
-              <Instagram className="h-4 w-4" />
-            </a>
-            {/* LinkedIn */}
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-blue-700 rounded-full transition-all" aria-label="LinkedIn">
-              <Linkedin className="h-4 w-4" />
-            </a>
-            {/* Facebook */}
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-blue-600 rounded-full transition-all" aria-label="Facebook">
-              <Facebook className="h-4 w-4" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>

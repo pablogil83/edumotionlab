@@ -33,7 +33,7 @@ const AppContent: React.FC = () => {
   const [showBanner, setShowBanner] = useState(true);
 
   return (
-    <div className="flex flex-col min-h-screen bg-light text-dark selection:bg-accent/20 selection:text-accent font-body">
+    <div className="flex flex-col min-h-screen bg-light text-dark selection:bg-accent/20 selection:text-accent font-body overflow-x-hidden">
       {/* AVISO DE PROTOTIPO GLOBAL */}
       {showBanner && (
         <div className="bg-amber-50 border-b border-amber-200 relative z-[60] animate-fade-in-down shadow-sm">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { CheckCircle, AlertCircle, User, Mail, Building, Phone, Briefcase, MessageSquare } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface FormData {
   nombre: string;
@@ -18,6 +19,7 @@ interface FormErrors {
 }
 
 const Register: React.FC = () => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -169,32 +171,32 @@ const Register: React.FC = () => {
                       </h3>
                       <div className="grid md:grid-cols-2 gap-6">
                          <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">Nombre</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">{t('form.name')}</label>
                             <input 
                               name="nombre" 
                               value={formData.nombre} 
                               onChange={handleChange} 
                               type="text" 
                               className={getInputClass(errors.nombre)} 
-                              placeholder="Ej. María" 
+                              placeholder={t('form.name')} 
                             />
                             {errors.nombre && <p className="text-red-500 text-xs mt-2 ml-1 flex items-center gap-1 font-bold"><AlertCircle className="h-3 w-3"/> {errors.nombre}</p>}
                          </div>
                          <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">Apellidos</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">{t('form.surname')}</label>
                             <input 
                               name="apellidos" 
                               value={formData.apellidos} 
                               onChange={handleChange} 
                               type="text" 
                               className={getInputClass(errors.apellidos)} 
-                              placeholder="Ej. García López" 
+                              placeholder={t('form.surname')}
                             />
                             {errors.apellidos && <p className="text-red-500 text-xs mt-2 ml-1 flex items-center gap-1 font-bold"><AlertCircle className="h-3 w-3"/> {errors.apellidos}</p>}
                          </div>
                       </div>
                       <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">Teléfono Móvil</label>
+                          <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">{t('form.phone')}</label>
                           <div className="relative">
                              <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5 z-10" />
                              <input 
@@ -217,7 +219,7 @@ const Register: React.FC = () => {
                       </h3>
                       <div className="grid md:grid-cols-2 gap-6">
                          <div className="md:col-span-2">
-                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">Centro Educativo</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">{t('form.school')}</label>
                             <div className="relative">
                                <Building className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5 z-10" />
                                <input 
@@ -232,7 +234,7 @@ const Register: React.FC = () => {
                             {errors.centro && <p className="text-red-500 text-xs mt-2 ml-1 flex items-center gap-1 font-bold"><AlertCircle className="h-3 w-3"/> {errors.centro}</p>}
                          </div>
                          <div className="md:col-span-2">
-                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">Cargo / Perfil</label>
+                            <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">{t('form.role')}</label>
                             <div className="relative">
                               <select 
                                  name="cargo" 
@@ -263,7 +265,7 @@ const Register: React.FC = () => {
                          <Mail className="h-4 w-4" /> Datos de Cuenta
                       </h3>
                       <div>
-                         <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">Email <span className="text-xs font-normal text-gray-500">(Para verificación)</span></label>
+                         <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">{t('form.email')} <span className="text-xs font-normal text-gray-500">(Para verificación)</span></label>
                          <input 
                             name="email" 
                             value={formData.email} 
@@ -308,7 +310,7 @@ const Register: React.FC = () => {
                            className="mt-1 w-5 h-5 rounded text-accent focus:ring-accent border-gray-300 cursor-pointer" 
                          />
                          <label htmlFor="terms" className="text-sm text-gray-600 leading-relaxed cursor-pointer select-none">
-                            He leído y acepto la <Link to="/privacy-policy" className="text-primary font-bold hover:underline">Política de Privacidad</Link>. Entiendo que recibiré un correo para verificar mi identidad y evitar spam.
+                            {t('form.terms')}
                          </label>
                       </div>
                       {errors.terms && <p className="text-red-500 text-xs mt-2 ml-1 flex items-center gap-1 font-bold"><AlertCircle className="h-3 w-3"/> {errors.terms}</p>}
@@ -322,7 +324,7 @@ const Register: React.FC = () => {
                       {isSubmitting ? (
                         <>Procesando...</>
                       ) : (
-                        <>Enviar Solicitud <CheckCircle className="h-6 w-6" /></>
+                        <>{t('form.send')} <CheckCircle className="h-6 w-6" /></>
                       )}
                    </button>
                 </form>

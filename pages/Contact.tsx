@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, Phone, X, AlertCircle, Check } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Mail, MapPin, Phone, X, AlertCircle, Check, Linkedin, Instagram, ArrowUpRight, Send } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
+import { useLanguage } from '../context/LanguageContext';
 
 // Fix for default Leaflet marker icons in React
 const fixLeafletIcon = () => {
@@ -19,9 +20,14 @@ const fixLeafletIcon = () => {
 };
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  
+  // Newsletter state
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
   
   useEffect(() => {
     fixLeafletIcon();
@@ -61,6 +67,16 @@ const Contact: React.FC = () => {
     }, 1500);
   };
 
+  // Newsletter Submit
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if(newsletterEmail) {
+        setNewsletterSubscribed(true);
+        setTimeout(() => setNewsletterSubscribed(false), 5000); // Reset after 5s
+        setNewsletterEmail('');
+    }
+  };
+
   // Función para scroll suave al mapa
   const scrollToMap = () => {
     const mapElement = document.getElementById('contact-map');
@@ -73,37 +89,131 @@ const Contact: React.FC = () => {
 
   return (
     <div className="animate-fade-in py-20 bg-light relative">
-       {/* Removed items-start so columns stretch to equal height */}
        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+          
+          {/* Columna Izquierda: Info + Redes + Newsletter + Mapa */}
           <div className="flex flex-col h-full">
-             <span className="text-accent font-bold text-sm tracking-wide">CONTACTO</span>
-             <h1 className="text-4xl font-black text-dark mb-6">Estamos aquí para ayudarte</h1>
-             <p className="text-gray-500 mb-8 text-lg">
-                Si tienes dudas sobre el programa o quieres una solución personalizada para tu centro, escríbenos.
-             </p>
              
-             <ul className="space-y-6 mb-12">
+             {/* Header de contacto + Redes Sociales Encima del título */}
+             <div className="mb-6">
+                <div className="flex items-center gap-3 mb-4 animate-fade-in">
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
+                  <div className="flex gap-2 items-center">
+                    <a 
+                      href="https://www.linkedin.com/in/edumotionlab/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin className="h-4 w-4" />
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/edumotionlab/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="h-4 w-4" />
+                    </a>
+                    <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                        <Mail className="h-3 w-3" /> Newsletter
+                    </Link>
+                  </div>
+                </div>
+
+                <span className="text-accent font-bold text-sm tracking-wide">CONTACTO</span>
+                <h1 className="text-4xl font-black text-dark mb-6 mt-2">{t('contact.title')}</h1>
+                <p className="text-gray-500 text-lg">
+                    {t('contact.subtitle')}
+                </p>
+             </div>
+             
+             <ul className="space-y-6 mb-8 border-b border-gray-100 pb-8">
                 <li className="flex items-center gap-4 group">
                    <div className="bg-white p-3 rounded-full shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors"><Mail className="h-6 w-6" /></div>
-                   {/* Lógica: Abrir cliente de correo */}
                    <a href="mailto:hola@edumotionlab.com" className="font-medium text-dark hover:text-primary transition-colors">hola@edumotionlab.com</a>
                 </li>
                 <li className="flex items-center gap-4 group">
                    <div className="bg-white p-3 rounded-full shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors"><Phone className="h-6 w-6" /></div>
-                   {/* Lógica: Abrir app de llamadas */}
                    <a href="tel:+34900000000" className="font-medium text-dark hover:text-primary transition-colors">+34 900 000 000</a>
                 </li>
                 <li className="flex items-center gap-4 group cursor-pointer" onClick={scrollToMap}>
                    <div className="bg-white p-3 rounded-full shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors"><MapPin className="h-6 w-6" /></div>
-                   {/* Lógica: Scroll al mapa */}
                    <span className="font-medium text-dark hover:text-primary transition-colors">Madrid, España (Ver mapa)</span>
                 </li>
              </ul>
 
+             {/* Redes Sociales - Botones más pequeños y amigables */}
+             <div className="mb-8">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Comunidad</h3>
+                <div className="flex gap-4">
+                    <a 
+                      href="https://www.linkedin.com/in/edumotionlab/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-1 group flex items-center justify-center gap-3 p-4 rounded-xl border border-gray-100 bg-white hover:border-[#0077b5]/30 hover:bg-[#0077b5]/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                    >
+                        <Linkedin className="h-5 w-5 text-[#0077b5]" />
+                        <div className="text-left">
+                            <span className="block font-bold text-dark text-sm group-hover:text-[#0077b5]">LinkedIn</span>
+                            <span className="text-[10px] text-gray-400 group-hover:text-[#0077b5]/70">Conectar</span>
+                        </div>
+                    </a>
+
+                    <a 
+                      href="https://www.instagram.com/edumotionlab/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-1 group flex items-center justify-center gap-3 p-4 rounded-xl border border-gray-100 bg-white hover:border-[#E1306C]/30 hover:bg-[#E1306C]/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                    >
+                        <Instagram className="h-5 w-5 text-[#E1306C]" />
+                        <div className="text-left">
+                            <span className="block font-bold text-dark text-sm group-hover:text-[#E1306C]">Instagram</span>
+                            <span className="text-[10px] text-gray-400 group-hover:text-[#E1306C]/70">Seguir</span>
+                        </div>
+                    </a>
+                </div>
+             </div>
+
+             {/* Newsletter Section - NUEVO */}
+             <div className="bg-gradient-to-br from-dark to-gray-800 rounded-2xl p-6 text-white mb-8 shadow-lg relative overflow-hidden">
+                <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+                <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+                    <Send className="h-5 w-5 text-secondary-green" /> Newsletter
+                </h3>
+                <p className="text-gray-300 text-sm mb-4">
+                    {t('form.newsletter')}
+                </p>
+                
+                {newsletterSubscribed ? (
+                    <div className="bg-secondary-green/20 border border-secondary-green/50 text-secondary-green rounded-lg p-3 text-sm font-bold flex items-center gap-2 animate-fade-in">
+                        <Check className="h-4 w-4" /> ¡Suscripción correcta!
+                    </div>
+                ) : (
+                    <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                        <input 
+                            type="email" 
+                            required
+                            placeholder="Tu email..." 
+                            className="flex-1 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-secondary-green focus:bg-white/20 transition-all"
+                            value={newsletterEmail}
+                            onChange={(e) => setNewsletterEmail(e.target.value)}
+                        />
+                        <button 
+                            type="submit"
+                            className="bg-secondary-green text-dark font-bold px-4 py-2 rounded-lg text-sm hover:bg-secondary-green-dark hover:text-white transition-colors"
+                        >
+                            {t('form.newsletter_btn')}
+                        </button>
+                    </form>
+                )}
+             </div>
+
              {/* Interactive Map */}
-             {/* Importante: Se define una altura mínima explícita para evitar colapso de Leaflet */}
-             <div id="contact-map" className="flex-grow w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative z-0" style={{ minHeight: '400px' }}>
-               <MapContainer center={position} zoom={13} scrollWheelZoom={false} className="h-full w-full" style={{ height: '100%', minHeight: '400px', width: '100%' }}>
+             <div id="contact-map" className="w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative z-0 h-[250px]">
+               <MapContainer center={position} zoom={13} scrollWheelZoom={false} className="h-full w-full" style={{ height: '100%', minHeight: '250px', width: '100%' }}>
                   <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -120,12 +230,12 @@ const Contact: React.FC = () => {
              </div>
           </div>
 
-          {/* Formulario con estilos mejorados: Borde sutil y sombra ligera */}
+          {/* Formulario */}
           <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 h-full">
              <form onSubmit={handleInitialSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                    <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">Nombre</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">{t('form.name')}</label>
                       <input 
                         type="text" 
                         name="nombre"
@@ -133,11 +243,11 @@ const Contact: React.FC = () => {
                         onChange={handleChange}
                         required 
                         className="w-full px-4 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all" 
-                        placeholder="Tu nombre" 
+                        placeholder={t('form.name')}
                       />
                    </div>
                    <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">Apellidos</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">{t('form.surname')}</label>
                       <input 
                         type="text" 
                         name="apellidos"
@@ -145,12 +255,12 @@ const Contact: React.FC = () => {
                         onChange={handleChange}
                         required 
                         className="w-full px-4 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all" 
-                        placeholder="Tus apellidos" 
+                        placeholder={t('form.surname')}
                       />
                    </div>
                 </div>
                 <div>
-                   <label className="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                   <label className="block text-sm font-bold text-gray-700 mb-2">{t('form.email')}</label>
                    <input 
                       type="email" 
                       name="email"
@@ -162,7 +272,7 @@ const Contact: React.FC = () => {
                    />
                 </div>
                 <div>
-                   <label className="block text-sm font-bold text-gray-700 mb-2">Mensaje</label>
+                   <label className="block text-sm font-bold text-gray-700 mb-2">{t('form.message')}</label>
                    <textarea 
                       name="mensaje"
                       value={formData.mensaje}
@@ -177,7 +287,7 @@ const Contact: React.FC = () => {
                   type="submit" 
                   className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary-dark transition-all hover:-translate-y-0.5 shadow-lg shadow-primary/20"
                 >
-                   Revisar y Enviar
+                   {t('form.send')}
                 </button>
              </form>
           </div>

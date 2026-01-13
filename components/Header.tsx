@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Activity, Globe, ChevronDown, Check } from 'lucide-react';
+import { Menu, X, Activity, Globe, ChevronDown, Check, Linkedin, Instagram } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { LanguageCode } from '../data/translations';
 
@@ -212,9 +212,6 @@ const Header: React.FC = () => {
               )}
             </div>
 
-            {/* Separator */}
-            <div className="h-6 w-px bg-gray-200"></div>
-
             <Link
               to="/register"
               className="bg-gradient-to-r from-accent to-orange-500 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-bold py-2.5 px-5 xl:px-6 rounded-full transition-all transform hover:-translate-y-0.5 shadow-lg shadow-accent/20 flex items-center gap-2 hover:shadow-accent/40 whitespace-nowrap"
@@ -280,7 +277,7 @@ const Header: React.FC = () => {
             ))}
 
             {/* Language Selector Mobile (Fallback in Menu) */}
-            <div className="border-t border-gray-100 mt-4 pt-4 px-4">
+            <div className="border-t border-gray-100 mt-2 pt-4 px-4">
                <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 block flex items-center gap-2">
                   <Globe className="h-3.5 w-3.5" /> {t('header.lang')}
                </span>

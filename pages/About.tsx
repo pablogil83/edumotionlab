@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Lightbulb, Users, Leaf, Target, Award, ArrowRight, Rocket, Mail, Link as LinkIcon, Zap, Eye, Mic2, Flag, CheckCircle, ClipboardCheck, Puzzle, Loader2, Compass, Heart } from 'lucide-react';
+import { Lightbulb, Users, Leaf, Target, Award, ArrowRight, Rocket, Mail, Link as LinkIcon, Zap, Eye, Mic2, Flag, CheckCircle, ClipboardCheck, Puzzle, Loader2, Compass, Heart, Linkedin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 // Componente auxiliar para manejar la carga de imágenes de OneDrive
 const ImageWithLoader: React.FC<{ src: string; alt: string; className?: string; imgClassName?: string }> = ({ src, alt, className, imgClassName }) => {
@@ -25,6 +26,8 @@ const ImageWithLoader: React.FC<{ src: string; alt: string; className?: string; 
 };
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+
   const teamMembers = [
     {
       name: "Olga Asurmendi",
@@ -181,16 +184,29 @@ const About: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="flex flex-col lg:flex-row items-center gap-16">
                 <div className="lg:w-1/2 animate-fade-in-up">
+                   
+                   {/* Social Buttons Above Title */}
+                   <div className="flex items-center gap-3 mb-1 animate-fade-in">
+                     <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
+                     <div className="flex gap-2 items-center">
+                       <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+                       <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+                       <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                          <Mail className="h-3 w-3" /> Newsletter
+                       </Link>
+                     </div>
+                   </div>
+
                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-brand-orange text-xs font-bold uppercase mb-6 border border-orange-200">
                       <Rocket className="h-4 w-4" /> Sobre Nosotros
                    </div>
                    
                    <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-2">
-                      EduMotion Lab
+                      {t('about.hero.title')}
                    </h1>
                    
                    <p className="text-lg text-gray-500 leading-relaxed mb-6">
-                      Somos un laboratorio de ideas donde la pedagogía se encuentra con la tecnología. Nuestra misión es eliminar la brecha digital en la educación física, haciendo que la tecnología sea "invisible" y potencie el movimiento. Nuestra propuesta se alinea con el Marco DigCompEdu y la LOMLOE, transformando la obligación normativa en oportunidad pedagógica.
+                      {t('about.hero.desc')}
                    </p>
 
                    <div className="mb-8 p-4 bg-white/60 backdrop-blur-sm border-l-4 border-accent rounded-r-xl shadow-sm">
@@ -248,9 +264,9 @@ const About: React.FC = () => {
                    <div className="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                       <Target className="h-7 w-7" />
                    </div>
-                   <h3 className="text-xl font-bold mb-3 text-dark">Nuestra Misión</h3>
+                   <h3 className="text-xl font-bold mb-3 text-dark">{t('about.mission.title')}</h3>
                    <p className="text-gray-500 leading-relaxed text-sm">
-                      Eliminar la brecha digital en Educación Física mediante formación docente que integre tecnología y movimiento sin fricción.
+                      {t('about.mission.desc')}
                    </p>
                 </div>
                 
@@ -353,8 +369,8 @@ const About: React.FC = () => {
        <section className="py-24 bg-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="text-center max-w-3xl mx-auto mb-16">
-                <span className="text-accent font-bold text-sm uppercase tracking-wider mb-2 block">El Equipo</span>
-                <h2 className="text-3xl md:text-4xl font-black text-dark mb-4">Quienes hacen esto posible</h2>
+                <span className="text-accent font-bold text-sm uppercase tracking-wider mb-2 block">{t('about.team.title')}</span>
+                <h2 className="text-3xl md:text-4xl font-black text-dark mb-4">{t('about.team.subtitle')}</h2>
                 <p className="text-gray-500 text-lg">
                    Profesionales apasionados que combinan la experiencia docente con el conocimiento técnico.
                 </p>

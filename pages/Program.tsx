@@ -5,7 +5,7 @@ import {
   Search, Layout, Layers, Rocket, 
   GraduationCap, Palette, MousePointerClick, FileCode, Box,
   ClipboardCheck, Users, ShieldCheck, CheckCircle, Sparkles, User, ArrowRight, Activity, Brain, Target, Lightbulb, Video,
-  BookOpen
+  BookOpen, Linkedin, Instagram, Mail
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
@@ -27,6 +27,19 @@ const Program: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12">
                 <div className="flex flex-col gap-6 max-w-3xl">
+                   
+                   {/* Social Buttons Above Title */}
+                   <div className="flex items-center gap-3 mb-1 animate-fade-in">
+                     <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
+                     <div className="flex gap-2 items-center">
+                       <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+                       <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+                       <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                          <Mail className="h-3 w-3" /> Newsletter
+                       </Link>
+                     </div>
+                   </div>
+
                    <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary animate-fade-in">
                       <Sparkles className="h-4 w-4" /> Matrícula Abierta
                    </div>

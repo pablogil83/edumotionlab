@@ -3,101 +3,81 @@ import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Star, 
   CloudOff, Gamepad2, GraduationCap, Download, Settings, Brain, List, Wrench, Quote, Watch, PlayCircle, Activity, ExternalLink, Youtube, Box,
-  ChevronLeft, ChevronRight, CheckCircle, Smartphone, Wifi, Users, AlertTriangle, Monitor, Calendar, Clock, Laptop
+  ChevronLeft, ChevronRight, CheckCircle, Smartphone, Wifi, Users, AlertTriangle, Monitor, Calendar, Clock, Laptop, Linkedin, Instagram, Mail, MapPin
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-
-// Datos de testimonios ampliados (12 historias de impacto)
-const testimonialsData = [
-  {
-    id: 1,
-    name: "Lucía Méndez",
-    role: "Docente Secundaria",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
-    text: "Por fin entiendo cómo aterrizar la LOMLOE en mi programación sin volverme loca con los papeles. El enfoque práctico es lo mejor."
-  },
-  {
-    id: 2,
-    name: "Carlos Ruiz",
-    role: "Especialista Primaria",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-    text: "He pasado de las fichas de papel a evaluar por rúbricas digitales en tiempo real. Mis alumnos están más motivados que nunca."
-  },
-  {
-    id: 3,
-    name: "Marta Sánchez",
-    role: "Jefa de Departamento",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-    text: "Innovar en Movimiento nos ha dado la estructura que necesitábamos en el departamento para unificar criterios y modernizarnos."
-  },
-  {
-    id: 4,
-    name: "Javier Soria",
-    role: "Coord. TIC y EF",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-    text: "Integrar Strava en el currículo de resistencia ha sido un éxito rotundo. Los alumnos compiten sanamente incluso los fines de semana."
-  },
-  {
-    id: 5,
-    name: "Elena Rivas",
-    role: "Opositora",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
-    text: "Gracias al módulo de Moodle pude presentar una programación didáctica digital que marcó la diferencia en mi tribunal."
-  },
-  {
-    id: 6,
-    name: "Roberto Díaz",
-    role: "Profesor FP TAFAD",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    text: "Kinovea nos ha permitido analizar gestos técnicos con una precisión profesional. Mis alumnos salen mucho mejor preparados."
-  },
-  {
-    id: 7,
-    name: "Sonia Pla",
-    role: "Docente Secundaria",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-    text: "La gamificación con ClassCraft ha transformado la gestión de aula. El compromiso motor ha aumentado porque todos quieren ganar XP."
-  },
-  {
-    id: 8,
-    name: "Miguel Ángel",
-    role: "Director de Centro",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
-    text: "Buscábamos una formación que no fuera solo teoría. EduMotion Lab ha traído herramientas reales que se usan desde el día uno."
-  },
-  {
-    id: 9,
-    name: "Beatriz Conde",
-    role: "Maestra Educación Física",
-    img: "https://images.unsplash.com/photo-1598550832205-d07e49436160?w=400&h=400&fit=crop",
-    text: "El enfoque DUA me ha ayudado a incluir a alumnos con dificultades motrices de forma natural usando tecnología adaptada."
-  },
-  {
-    id: 10,
-    name: "Antonio V.",
-    role: "Docente Bachillerato",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
-    text: "Pensaba que la tecnología nos haría perder tiempo de actividad física. Me equivocaba: la 'tecnología invisible' lo multiplica."
-  },
-  {
-    id: 11,
-    name: "Carmen Vega",
-    role: "Jefa de Estudios",
-    img: "https://images.unsplash.com/photo-1554151228-14d9def656ec?w=400&h=400&fit=crop",
-    text: "La evaluación competencial ya no es un dolor de cabeza. CoRubrics y los informes automáticos me han devuelto mi tiempo libre."
-  },
-  {
-    id: 12,
-    name: "Pablo Gil",
-    role: "Docente Secundaria",
-    img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop",
-    text: "Los Breakouts educativos que aprendí a diseñar han convertido el repaso de teoría en la actividad favorita del trimestre."
-  }
-];
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
   const videoUrl = "https://1drv.ms/v/c/176b0767a5ca5a26/IQSwqDjqP9uAQLa3dr_2w8aaAY050-kAMM482u9C3vVVzOE";
+
+  // Data moved inside to keep structure, but texts are mixed language to show diversity as requested
+  const testimonialsData = [
+    {
+      id: 1,
+      name: "Lucía Méndez",
+      role: "Docente Secundaria",
+      location: "Madrid",
+      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+      text: "Por fin entiendo cómo aterrizar la LOMLOE en mi programación sin volverme loca con los papeles. El enfoque práctico es lo mejor."
+    },
+    {
+      id: 2,
+      name: "Jordi Soler",
+      role: "Cap d'Estudis",
+      location: "Barcelona",
+      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+      text: "El curs ha estat una revelació. Integrar Moodle amb l'educació física semblava impossible, però ara és el meu dia a dia a l'institut."
+    },
+    {
+      id: 3,
+      name: "Uxía Domínguez",
+      role: "Mestra Educación Física",
+      location: "Santiago",
+      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop",
+      text: "Moi contenta coa formación. As ferramentas de vídeo análise cambiaron a forma na que os meus alumnos entenden o movemento."
+    },
+    {
+      id: 4,
+      name: "Iñaki Goikoetxea",
+      role: "Koordinatzailea",
+      location: "Donostia",
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      text: "Ezinbestekoa gure ikasleentzat. Teknologia eta kirola uztartzeko modu ezin hobea iruditu zait."
+    },
+    {
+      id: 5,
+      name: "Carlos Ruiz",
+      role: "Especialista Primaria",
+      location: "Valencia",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      text: "He pasado de las fichas de papel a evaluar por rúbricas digitales en tiempo real. Mis alumnos están más motivados que nunca."
+    },
+    {
+      id: 6,
+      name: "Elena Rivas",
+      role: "Opositora",
+      location: "Sevilla",
+      img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      text: "Gracias al módulo de Moodle pude presentar una programación didáctica digital que marcó la diferencia en mi tribunal."
+    },
+    {
+      id: 7,
+      name: "Roberto Díaz",
+      role: "Profesor FP TAFAD",
+      location: "Zaragoza",
+      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+      text: "Kinovea nos ha permitido analizar gestos técnicos con una precisión profesional. Mis alumnos salen mucho mejor preparados."
+    },
+    {
+      id: 8,
+      name: "Sonia Pla",
+      role: "Docente Secundaria",
+      location: "Alicante",
+      img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+      text: "La gamificación con ClassCraft ha transformado la gestión de aula. El compromiso motor ha aumentado porque todos quieren ganar XP."
+    }
+  ];
 
   // --- Carousel Logic ---
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -146,14 +126,26 @@ const Home: React.FC = () => {
           {/* Left Column: Text */}
           <div className="flex flex-col gap-6 z-10 relative">
             
+            {/* Social Buttons Above Title (NEW) */}
+            <div className="flex items-center gap-3 mb-1 animate-fade-in">
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
+              <div className="flex gap-2 items-center">
+                <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+                <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+                <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                   <Mail className="h-3 w-3" /> Newsletter
+                </Link>
+              </div>
+            </div>
+
             {/* Hierarchy Clarification: EduMotion Lab Presents */}
             <div className="animate-fade-in flex flex-col gap-4 mb-2">
                <span className="text-sm font-bold text-gray-400 uppercase tracking-widest pl-1">
                   {t('hero.presents')}
                </span>
                
-               {/* High Visibility Badge */}
-               <div className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-secondary-green to-secondary-green-dark text-white shadow-[0_0_25px_rgba(74,222,128,0.4)] w-fit transition-transform hover:scale-105 animate-bounce-subtle border-4 border-white ring-4 ring-secondary-green/10">
+               {/* High Visibility Badge - CHANGED TO BLUE (Primary) to reduce Green usage */}
+               <div className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-primary-dark text-white shadow-[0_0_25px_rgba(0,120,212,0.4)] w-fit transition-transform hover:scale-105 animate-bounce-subtle border-4 border-white ring-4 ring-primary/10">
                   <span className="relative flex h-3 w-3">
                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                      <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
@@ -197,7 +189,7 @@ const Home: React.FC = () => {
               </Link>
             </div>
             
-            <div className="flex items-center gap-4 mt-8 pt-8 border-t border-gray-100 animate-fade-in-up delay-300">
+            <div className="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100 animate-fade-in-up delay-300">
                <div className="flex -space-x-3">
                   <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=100&h=100" alt="Docente 1" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
                   <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100" alt="Docente 2" className="w-10 h-10 rounded-full border-2 border-white object-cover" />
@@ -266,7 +258,7 @@ const Home: React.FC = () => {
                   <span>{t('philosophy.title')}</span>
                </div>
                <h2 className="text-4xl md:text-5xl font-black text-dark tracking-tight">
-                  El Desafío: <span className="text-primary">Digitalizar</span> sin <span className="text-secondary-green-dark">Sedentarizar</span>
+                  {t('philosophy.heading')}
                </h2>
             </div>
 
@@ -278,17 +270,17 @@ const Home: React.FC = () => {
                   <div className="bg-white p-6 rounded-2xl border-l-4 border-brand-orange shadow-sm relative">
                      <h3 className="text-xl font-bold text-dark mb-3 flex items-center gap-2">
                         <AlertTriangle className="h-5 w-5 text-brand-orange" />
-                        Tecnología al Servicio del Movimiento
+                        {t('philosophy.box_title')}
                      </h3>
                      <p className="text-gray-600 text-lg leading-relaxed">
-                        Nuestra propuesta no busca sustituir la actividad física por pantallas, sino integrar la tecnología como un facilitador silencioso. El objetivo es utilizar dispositivos que permitan registrar evidencias, monitorizar el esfuerzo y ofrecer feedback inmediato, respetando siempre lo más sagrado de la asignatura: el tiempo de compromiso motor.
+                        {t('philosophy.box_desc')}
                      </p>
                   </div>
 
                   <div>
-                     <h3 className="text-xl font-bold text-dark mb-3">Tecnología Invisible y Funcional</h3>
+                     <h3 className="text-xl font-bold text-dark mb-3">{t('philosophy.subtitle')}</h3>
                      <p className="text-gray-500 text-lg leading-relaxed mb-6">
-                        Implementamos herramientas que trabajan en segundo plano o que requieren una interacción mínima (Actionbound, Plickers, Strava). De esta forma, la tecnología se convierte en un medio para alcanzar la competencia motriz y digital simultáneamente, tal y como exige el nuevo marco curricular.
+                        {t('philosophy.text')}
                      </p>
                      
                      {/* Ficha Técnica Resumida (Sustituye a Stats) */}
@@ -362,10 +354,10 @@ const Home: React.FC = () => {
                         </div>
                         <div className="mb-4">
                            <span className="block text-xs font-black text-blue-500 uppercase tracking-widest mb-1">Área 2</span>
-                           <h4 className="text-xl font-bold text-dark">Contenidos Digitales</h4>
+                           <h4 className="text-xl font-bold text-dark">{t('home.digcomp.area2')}</h4>
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed">
-                           Creación y modificación de recursos propios <strong>(H5P, Genially)</strong> para personalizar el aprendizaje motriz.
+                           {t('home.digcomp.area2_desc')}
                         </p>
                      </div>
                   </div>
@@ -382,10 +374,10 @@ const Home: React.FC = () => {
                         </div>
                         <div className="mb-4">
                            <span className="block text-xs font-black text-purple-500 uppercase tracking-widest mb-1">Área 3</span>
-                           <h4 className="text-xl font-bold text-dark">Enseñanza y Aprendizaje</h4>
+                           <h4 className="text-xl font-bold text-dark">{t('home.digcomp.area3')}</h4>
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed">
-                           Gestión del aula digital y uso de <strong>metodologías activas</strong> (Gamificación, Flipped Classroom) en educación física.
+                           {t('home.digcomp.area3_desc')}
                         </p>
                      </div>
                   </div>
@@ -402,10 +394,10 @@ const Home: React.FC = () => {
                         </div>
                         <div className="mb-4">
                            <span className="block text-xs font-black text-emerald-500 uppercase tracking-widest mb-1">Área 5</span>
-                           <h4 className="text-xl font-bold text-dark">Empoderamiento</h4>
+                           <h4 className="text-xl font-bold text-dark">{t('home.digcomp.area5')}</h4>
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed">
-                           Atención a la diversidad mediante <strong>DUA</strong> y accesibilidad universal para garantizar la inclusión en el deporte.
+                           {t('home.digcomp.area5_desc')}
                         </p>
                      </div>
                   </div>
@@ -573,10 +565,10 @@ const Home: React.FC = () => {
       <section className="py-24 bg-light overflow-hidden" id="testimonials">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-               <span className="text-secondary-green-dark font-bold text-sm uppercase tracking-wider mb-2 block">Experiencias Reales</span>
-               <h2 className="text-3xl md:text-4xl font-bold text-dark">Voces de la Innovación</h2>
+               <span className="text-secondary-green-dark font-bold text-sm uppercase tracking-wider mb-2 block">{t('testimonials.tag')}</span>
+               <h2 className="text-3xl md:text-4xl font-bold text-dark">{t('testimonials.title')}</h2>
                <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-                 Descubre cómo más de 800 docentes están transformando sus clases con EduMotion Lab. Historias reales de impacto en el patio.
+                 {t('testimonials.desc')}
                </p>
             </div>
             
@@ -609,29 +601,39 @@ const Home: React.FC = () => {
                             style={{ minWidth: `${100 / itemsPerPage}%` }}
                             className="px-4"
                          >
-                            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
-                                <div className="absolute -top-4 left-8 text-primary bg-white px-2 rounded-full border border-gray-50 shadow-sm">
+                            <div className="bg-white p-8 rounded-2xl shadow-sm border-2 border-gray-100 relative hover:shadow-xl hover:border-primary/10 transition-all duration-300 h-full flex flex-col hover:-translate-y-1 group">
+                                <div className="absolute -top-4 left-8 text-primary bg-white px-2 rounded-full border border-gray-100 shadow-sm group-hover:scale-110 transition-transform">
                                    <Quote className="h-6 w-6 fill-primary/10" />
                                 </div>
                                 
-                                <p className="text-gray-600 mb-6 mt-4 italic leading-relaxed flex-grow">
+                                <p className="text-gray-600 mb-6 mt-4 italic leading-relaxed flex-grow text-sm md:text-base">
                                    "{item.text}"
                                 </p>
                                 
                                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-gray-50">
-                                   <img 
-                                      alt={item.name} 
-                                      className="w-12 h-12 rounded-full object-cover ring-2 ring-gray-100" 
-                                      src={item.img}
-                                      loading="lazy"
-                                   />
+                                   <div className="relative">
+                                      <img 
+                                         alt={item.name} 
+                                         className="w-14 h-14 rounded-full object-cover ring-4 ring-gray-50 group-hover:ring-primary/20 transition-all" 
+                                         src={item.img}
+                                         loading="lazy"
+                                      />
+                                      {/* Location Dot */}
+                                      <div className="absolute bottom-0 right-0 w-4 h-4 bg-white rounded-full flex items-center justify-center border border-gray-100 shadow-sm" title={item.location}>
+                                         <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                                      </div>
+                                   </div>
                                    <div>
                                       <h5 className="font-bold text-dark text-sm">{item.name}</h5>
-                                      <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">{item.role}</p>
+                                      <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-1">{item.role}</p>
+                                      <div className="flex items-center gap-1 text-[10px] text-gray-400 font-bold bg-gray-50 px-2 py-0.5 rounded-full w-fit">
+                                         <MapPin className="h-3 w-3" /> {item.location}
+                                      </div>
                                    </div>
-                                   <div className="ml-auto flex text-brand-orange">
-                                      <Star className="h-4 w-4 fill-current" />
-                                      <span className="text-xs font-bold ml-1 text-gray-400">5.0</span>
+                                   <div className="ml-auto flex flex-col items-end">
+                                      <div className="flex text-brand-orange">
+                                         {[1,2,3,4,5].map(i => <Star key={i} className="h-3 w-3 fill-current" />)}
+                                      </div>
                                    </div>
                                 </div>
                             </div>

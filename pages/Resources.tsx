@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { 
   Layout, BookOpen, FileText, Map, Sword, Presentation, 
   Activity, Video, Heart, QrCode, Table, CheckCircle, ExternalLink, 
-  Layers, Cpu, HeartPulse, GraduationCap, ArrowRight, Box
+  Layers, Cpu, HeartPulse, GraduationCap, ArrowRight, Box, Linkedin, Instagram, Mail
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 // Definición de tipos para las herramientas
 type ToolType = 'Software' | 'App móvil' | 'Plantilla';
@@ -27,8 +28,9 @@ interface Section {
 }
 
 const Resources: React.FC = () => {
+  const { t } = useLanguage();
   
-  // Datos estructurados por Ejes
+  // Datos estructurados por Ejes - Movido dentro del componente para usar 't'
   const sections: Section[] = [
     {
       id: 'addie',
@@ -193,17 +195,29 @@ const Resources: React.FC = () => {
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          
+          {/* Social Buttons Above Title */}
+          <div className="flex items-center justify-center gap-3 mb-1 animate-fade-in">
+             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
+             <div className="flex gap-2 items-center">
+               <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+               <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+               <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                  <Mail className="h-3 w-3" /> Newsletter
+               </Link>
+             </div>
+          </div>
+
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-500 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
              <Box className="h-4 w-4 text-brand-orange" /> Centro de Recursos
           </div>
           
           <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-2">
-             Recursos Digitales
+             {t('resources.hero.title')}
           </h1>
           
           <p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
-             Hemos curado y categorizado las mejores herramientas digitales para el docente de Educación Física moderno.
-             Organizadas en <strong>4 ejes estratégicos</strong> para facilitar su implementación inmediata.
+             {t('resources.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -223,11 +237,11 @@ const Resources: React.FC = () => {
               </div>
               
               <h2 className="text-3xl md:text-4xl font-black text-dark">
-                Moodle: Nuestro Centro de Formación (EVA)
+                {t('resources.moodle.title')}
               </h2>
               
               <p className="text-gray-600 text-lg leading-relaxed">
-                Moodle es el pilar central donde se desarrolla nuestro programa formativo basado en el modelo ADDIE. Es el entorno virtual donde la teoría se convierte en práctica mediante contenidos interactivos H5P, foros de debate pedagógico y el seguimiento personalizado del docente.
+                {t('resources.moodle.desc')}
               </p>
               
               <a 
@@ -236,7 +250,7 @@ const Resources: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-orange text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-orange-200 hover:bg-orange-600 hover:-translate-y-1 transition-all"
               >
-                Acceder a la Plataforma <ExternalLink className="h-5 w-5" />
+                {t('resources.btn.access')} <ExternalLink className="h-5 w-5" />
               </a>
             </div>
 
@@ -329,7 +343,7 @@ const Resources: React.FC = () => {
                       rel="noopener noreferrer"
                       className={`mt-auto w-full py-3 rounded-xl border border-gray-100 bg-gray-50 text-gray-600 font-bold text-sm flex items-center justify-center gap-2 transition-all group-hover:bg-dark group-hover:text-white group-hover:border-dark`}
                     >
-                       Acceder <ExternalLink className="h-3.5 w-3.5" />
+                       {t('resources.btn.access')} <ExternalLink className="h-3.5 w-3.5" />
                     </a>
                   </div>
                 ))}
