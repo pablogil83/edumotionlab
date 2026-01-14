@@ -42,7 +42,7 @@ const Resources: React.FC = () => {
           name: "Trello",
           description: "Gestión visual de proyectos mediante tableros kanban. Ideal para coordinar el trabajo del departamento.",
           type: "Software",
-          icon: <img src="https://upload.wikimedia.org/wikipedia/en/8/8c/Trello_logo.svg" alt="Trello" className="w-full h-full object-contain p-2" />,
+          icon: <img src="https://cdn.worldvectorlogo.com/logos/trello.svg" alt="Trello" className="w-full h-full object-contain p-2" />,
           link: "https://trello.com"
         },
         {
@@ -56,14 +56,14 @@ const Resources: React.FC = () => {
           name: "iDoceo",
           description: "El cuaderno de notas del profesor para iPad. Planificador, diario y programación didáctica.",
           type: "App móvil",
-          icon: <img src="https://www.idoceo.net/images/icon_1024.png" alt="iDoceo" className="w-full h-full object-contain rounded-xl" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQRJslCMBUOOTIpz7IBETpv2AVtkkfsU9LmXXFxyJtt5GTs?width=256" alt="iDoceo" className="w-full h-full object-contain rounded-xl" />,
           link: "https://www.idoceo.net"
         },
         {
           name: "Additio",
           description: "Plataforma de gestión escolar y evaluación formativa. Cuaderno digital multiplataforma.",
           type: "Software",
-          icon: <img src="https://static.additioapp.com/images/additio_logo_rrss.png" alt="Additio" className="w-full h-full object-contain rounded-xl" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQQlTUTz7d3WSLMJmpJLr_ZuAV459k-HvFmFoAg4le21e-A?width=256&height=256" alt="Additio" className="w-full h-full object-contain rounded-xl" />,
           link: "https://additioapp.com"
         }
       ]
@@ -79,21 +79,21 @@ const Resources: React.FC = () => {
           name: "Actionbound",
           description: "Crea aventuras interactivas y gymkhanas digitales para el aprendizaje móvil al aire libre.",
           type: "App móvil",
-          icon: <img src="https://en.actionbound.com/assets/img/brand/actionbound-icon.png" alt="Actionbound" className="w-full h-full object-contain p-1" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQQB6axsZ402Qru_CpKGvQjiAYmiX3bmCpze1HKU8I4hRoQ?height=256" alt="Actionbound" className="w-full h-full object-contain rounded-xl" />,
           link: "https://en.actionbound.com"
         },
         {
           name: "Habitica",
           description: "App RPG 'pixel art' para gamificar hábitos saludables (sueño, hidratación, deporte) fuera del aula.",
           type: "App móvil",
-          icon: <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Habitica_logo.png" alt="Habitica" className="w-full h-full object-contain p-1" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQRYAkD80o-uRKMY07GCzPzoAU7rAjt24kHV1nxSDLXcc6w?height=256" alt="Habitica" className="w-full h-full object-contain rounded-xl" />,
           link: "https://habitica.com"
         },
         {
           name: "Genially",
           description: "Herramienta líder para crear contenidos interactivos, breakouts y presentaciones animadas.",
           type: "Software",
-          icon: <img src="https://static.genial.ly/resources/brand/logos/genially_icon_blue.svg" alt="Genially" className="w-full h-full object-contain p-2" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQQWmiQwCo-gSZWozGnhBil6Aco6F9jnhSvcyJ8KieEzoZk?width=250&height=249" alt="Genially" className="w-full h-full object-contain rounded-xl" />,
           link: "https://genially.com"
         }
       ]
@@ -109,21 +109,21 @@ const Resources: React.FC = () => {
           name: "Strava",
           description: "Red social para atletas que permite registrar, analizar y compartir actividades deportivas GPS.",
           type: "App móvil",
-          icon: <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Strava_Logo.svg" alt="Strava" className="w-full h-full object-contain p-2" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQSh6WQgEhB8RpgWPeqmaOi3AZggM3EgRhSiLGMz3D6bKgY?height=256" alt="Strava" className="w-full h-full object-contain rounded-xl" />,
           link: "https://www.strava.com"
         },
         {
           name: "Kinovea",
           description: "Software de referencia gratuito y de código abierto para el análisis de vídeo del gesto deportivo.",
           type: "Software",
-          icon: <img src="https://www.kinovea.org/images/kinovea-logo.png" alt="Kinovea" className="w-full h-full object-contain p-1" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQSi8GfK45_3TIvQf_dMOoEYAVs10BUIC6181_NcAYrSl2Q?height=256" alt="Kinovea" className="w-full h-full object-contain rounded-xl" />,
           link: "https://www.kinovea.org"
         },
         {
           name: "Google Fit",
           description: "Plataforma de Google para monitorizar la actividad física y los objetivos de salud diarios.",
           type: "App móvil",
-          icon: <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_Fit_icon_%282018%29.svg" alt="Google Fit" className="w-full h-full object-contain p-2" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQSKJnxOdR2GS56SToXVG8M9AbDprRF8T3caHJrfX9J8gJc?width=256" alt="Google Fit" className="w-full h-full object-contain rounded-xl" />,
           link: "https://www.google.com/fit"
         }
       ]
@@ -139,21 +139,21 @@ const Resources: React.FC = () => {
           name: "Plickers",
           description: "Herramienta de evaluación rápida mediante códigos QR impresos, sin necesidad de dispositivos para alumnos.",
           type: "App móvil",
-          icon: <img src="https://assets.plickers.com/brand/plickers-logo-mark.png" alt="Plickers" className="w-full h-full object-contain p-2" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQTEpmgrYCa6SL8O7PgA58hCAXfD3YcwxlMIHsKtvpT6ncA?height=256" alt="Plickers" className="w-full h-full object-contain rounded-xl" />,
           link: "https://get.plickers.com"
         },
         {
           name: "CoRubrics",
           description: "Complemento de Google Sheets para realizar procesos completos de coevaluación con rúbricas.",
           type: "Plantilla",
-          icon: <img src="https://lh3.googleusercontent.com/-_7q_Wd-E4dc/XyZ_2q_8_AI/AAAAAAAAAAI/AAAAAAAAAAA/4M-g7_4M-g7_4M-g7_4M-g7/s128-c-k-no-mo/photo.jpg" alt="CoRubrics" className="w-full h-full object-contain p-1 rounded-full" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQRqElkZL_pUTIwqBUXM5wLhAYdAkbHJodeS9VJ8vUlO_Mo?width=256" alt="CoRubrics" className="w-full h-full object-contain rounded-xl" />,
           link: "https://corubrics.com"
         },
         {
           name: "Checklist DUA",
           description: "Recursos y listas de verificación para asegurar el Diseño Universal para el Aprendizaje.",
           type: "Plantilla",
-          icon: <img src="https://www.educadua.es/wp-content/themes/educadua/images/logo.png" alt="DUA" className="w-full h-full object-contain p-1 bg-white" />,
+          icon: <img src="https://1drv.ms/i/c/176b0767a5ca5a26/IQQvp4Qgq-lXRbcZGGJMRsAEAap6KTn7YTTbhIfhRJdrPFo?height=256" alt="Checklist DUA" className="w-full h-full object-contain rounded-xl" />,
           link: "https://www.educadua.es/"
         }
       ]
@@ -226,7 +226,7 @@ const Resources: React.FC = () => {
         </div>
       </section>
 
-      {/* FEATURED: MOODLE HUB - REDISEÑADO */}
+      {/* FEATURED: MOODLE HUB - REDISEÑADO CON LOGO OFICIAL */}
       <section className="relative -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20 mb-20">
         <div className="bg-dark rounded-[2.5rem] shadow-2xl overflow-hidden relative group">
           <div className="absolute inset-0 bg-gradient-to-r from-dark to-slate-900 z-0"></div>
@@ -237,8 +237,9 @@ const Resources: React.FC = () => {
           <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-center p-10 md:p-14">
             
             <div className="flex-1 space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange text-white text-xs font-bold uppercase tracking-wider">
-                <GraduationCap className="h-4 w-4" /> Ecosistema Central
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white text-dark text-sm font-bold uppercase tracking-wider shadow-md">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Moodle-logo.svg" alt="Moodle Logo" className="h-8 w-auto" />
+                <span>Ecosistema Central</span>
               </div>
               
               <h2 className="text-4xl font-black text-white leading-tight">
@@ -254,7 +255,7 @@ const Resources: React.FC = () => {
                    href="https://moodle.org" 
                    target="_blank" 
                    rel="noopener noreferrer"
-                   className="inline-flex items-center gap-2 bg-white text-dark font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-gray-100 hover:-translate-y-1 transition-all"
+                   className="inline-flex items-center gap-2 bg-brand-orange text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-orange-600 hover:-translate-y-1 transition-all"
                  >
                    {t('resources.btn.access')} <ExternalLink className="h-5 w-5" />
                  </a>
@@ -315,7 +316,7 @@ const Resources: React.FC = () => {
 
                     {/* Header Card */}
                     <div className="flex justify-between items-start mb-6 relative z-10">
-                       <a href={tool.link} target="_blank" rel="noopener noreferrer" className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 ${styles.iconBg} shadow-sm border border-white overflow-hidden`}>
+                       <a href={tool.link} target="_blank" rel="noopener noreferrer" className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 ${styles.iconBg} shadow-sm border border-white overflow-hidden p-2`}>
                           {tool.icon}
                        </a>
                        <span className={`px-3 py-1 h-fit rounded-lg text-[10px] font-bold uppercase tracking-wider shadow-sm ${getTypeBadgeStyle(tool.type)}`}>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Star, 
   CloudOff, Gamepad2, GraduationCap, Download, Settings, Brain, List, Wrench, Quote, Watch, PlayCircle, Activity, ExternalLink, Youtube, Box,
-  ChevronLeft, ChevronRight, CheckCircle, Smartphone, Wifi, Users, AlertTriangle, Monitor, Calendar, Clock, Laptop, Linkedin, Instagram, Mail, MapPin
+  ChevronLeft, ChevronRight, CheckCircle, Smartphone, Wifi, Users, AlertTriangle, Monitor, Calendar, Clock, Laptop, Linkedin, Instagram, Mail, MapPin, Scale
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import ImageWithLoader from '../components/ImageWithLoader';
@@ -262,7 +262,6 @@ const Home: React.FC = () => {
 
       {/* Justificación Pedagógica UNIFICADA */}
       <section className="py-24 bg-slate-50 relative border-b border-gray-200" id="justificacion">
-         {/* ... Resto del componente Home ... */}
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                <div className="inline-flex items-center gap-2 mb-4 text-accent font-bold uppercase tracking-wider text-sm bg-white px-6 py-2 rounded-full shadow-sm border border-purple-100">
@@ -297,21 +296,34 @@ const Home: React.FC = () => {
                         {t('philosophy.text')}
                      </p>
                      
-                     <div className="grid grid-cols-3 gap-4">
-                        <div className="bg-white p-4 rounded-2xl border border-gray-100 text-center flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                           <div className="bg-blue-50 p-2 rounded-full mb-2"><Calendar className="h-5 w-5 text-primary" /></div>
-                           <span className="block font-black text-2xl text-dark">6</span>
-                           <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Semanas</span>
+                     {/* STATS REDISEÑADOS PARA MAYOR VISIBILIDAD */}
+                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                        <div className="bg-white p-5 rounded-2xl border border-gray-200 text-center flex flex-row sm:flex-col items-center justify-start sm:justify-center gap-5 sm:gap-2 shadow-sm hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
+                           <div className="bg-blue-50 p-3.5 rounded-xl group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                             <Calendar className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+                           </div>
+                           <div className="text-left sm:text-center">
+                              <span className="block font-black text-4xl text-dark leading-none mb-1">6</span>
+                              <span className="text-sm font-bold text-gray-500 uppercase tracking-wide">Semanas</span>
+                           </div>
                         </div>
-                        <div className="bg-white p-4 rounded-2xl border border-gray-100 text-center flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                           <div className="bg-orange-50 p-2 rounded-full mb-2"><Clock className="h-5 w-5 text-brand-orange" /></div>
-                           <span className="block font-black text-2xl text-dark">30</span>
-                           <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Horas</span>
+                        <div className="bg-white p-5 rounded-2xl border border-gray-200 text-center flex flex-row sm:flex-col items-center justify-start sm:justify-center gap-5 sm:gap-2 shadow-sm hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
+                           <div className="bg-orange-50 p-3.5 rounded-xl group-hover:bg-brand-orange group-hover:text-white transition-colors shrink-0">
+                             <Clock className="h-6 w-6 text-brand-orange group-hover:text-white transition-colors" />
+                           </div>
+                           <div className="text-left sm:text-center">
+                              <span className="block font-black text-4xl text-dark leading-none mb-1">30</span>
+                              <span className="text-sm font-bold text-gray-500 uppercase tracking-wide">Horas</span>
+                           </div>
                         </div>
-                        <div className="bg-white p-4 rounded-2xl border border-gray-100 text-center flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                           <div className="bg-green-50 p-2 rounded-full mb-2"><Laptop className="h-5 w-5 text-secondary-green-dark" /></div>
-                           <span className="block font-black text-sm text-dark mt-1">Online</span>
-                           <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Tutorizado</span>
+                        <div className="bg-white p-5 rounded-2xl border border-gray-200 text-center flex flex-row sm:flex-col items-center justify-start sm:justify-center gap-5 sm:gap-2 shadow-sm hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
+                           <div className="bg-green-50 p-3.5 rounded-xl group-hover:bg-secondary-green-dark group-hover:text-white transition-colors shrink-0">
+                             <Laptop className="h-6 w-6 text-secondary-green-dark group-hover:text-white transition-colors" />
+                           </div>
+                           <div className="text-left sm:text-center">
+                              <span className="block font-black text-xl sm:text-2xl text-dark leading-tight mb-1 sm:mt-1">Online</span>
+                              <span className="text-sm font-bold text-gray-500 uppercase tracking-wide">Tutorizado</span>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -421,6 +433,7 @@ const Home: React.FC = () => {
            </div>
            
            <div className="grid md:grid-cols-3 gap-8">
+              {/* Card 1: Herramientas (Dominio Técnico) */}
               <div className="flex flex-col bg-white rounded-[2rem] p-10 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-brand-orange/20 transition-all duration-300 group h-full relative overflow-hidden transform hover:-translate-y-3">
                  <div className="absolute top-0 left-0 w-full h-2 bg-brand-orange"></div>
                  <div className="absolute -right-8 -top-8 w-40 h-40 bg-brand-orange/5 rounded-full transition-transform group-hover:scale-150 duration-500"></div>
@@ -429,24 +442,54 @@ const Home: React.FC = () => {
                     <Box className="h-10 w-10" />
                  </div>
                  <h3 className="text-2xl font-black text-dark mb-4 relative z-10 group-hover:text-brand-orange transition-colors">{t('card.toolbox.title')}</h3>
-                 <p className="text-gray-500 text-lg leading-relaxed relative z-10">
+                 <p className="text-gray-500 text-lg leading-relaxed relative z-10 mb-6">
                     {t('card.toolbox.desc')}
                  </p>
+                 <ul className="space-y-3 relative z-10 mt-auto">
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-brand-orange shrink-0" />
+                       Videoanálisis (Kinovea)
+                    </li>
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-brand-orange shrink-0" />
+                       Hibridación (Strava/Apps)
+                    </li>
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-brand-orange shrink-0" />
+                       Aula Virtual (Moodle)
+                    </li>
+                 </ul>
               </div>
 
+              {/* Card 2: Normativa (Seguridad) */}
               <div className="flex flex-col bg-white rounded-[2rem] p-10 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group h-full relative overflow-hidden transform hover:-translate-y-3">
                  <div className="absolute top-0 left-0 w-full h-2 bg-primary"></div>
                  <div className="absolute -right-8 -top-8 w-40 h-40 bg-primary/5 rounded-full transition-transform group-hover:scale-150 duration-500"></div>
 
                  <div className="w-20 h-20 rounded-3xl bg-blue-50 text-primary flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform shadow-inner relative z-10">
-                    <GraduationCap className="h-10 w-10" />
+                    <Scale className="h-10 w-10" />
                  </div>
                  <h3 className="text-2xl font-black text-dark mb-4 relative z-10 group-hover:text-primary transition-colors">{t('card.lomloe.title')}</h3>
-                 <p className="text-gray-500 text-lg leading-relaxed relative z-10">
+                 <p className="text-gray-500 text-lg leading-relaxed relative z-10 mb-6">
                     {t('card.lomloe.desc')}
                  </p>
+                 <ul className="space-y-3 relative z-10 mt-auto">
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+                       Alineación Curricular
+                    </li>
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+                       Evaluación Competencial
+                    </li>
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-primary shrink-0" />
+                       Atención Diversidad (DUA)
+                    </li>
+                 </ul>
               </div>
 
+              {/* Card 3: Metodología (Output) */}
               <div className="flex flex-col bg-white rounded-[2rem] p-10 shadow-xl border border-gray-100 hover:shadow-2xl hover:shadow-secondary-green/20 transition-all duration-300 group h-full relative overflow-hidden transform hover:-translate-y-3">
                  <div className="absolute top-0 left-0 w-full h-2 bg-secondary-green"></div>
                  <div className="absolute -right-8 -top-8 w-40 h-40 bg-secondary-green/5 rounded-full transition-transform group-hover:scale-150 duration-500"></div>
@@ -455,9 +498,23 @@ const Home: React.FC = () => {
                     <Brain className="h-10 w-10" />
                  </div>
                  <h3 className="text-2xl font-black text-dark mb-4 relative z-10 group-hover:text-secondary-green-dark transition-colors">{t('card.moodle.title')}</h3>
-                 <p className="text-gray-500 text-lg leading-relaxed relative z-10">
+                 <p className="text-gray-500 text-lg leading-relaxed relative z-10 mb-6">
                     {t('card.moodle.desc')}
                  </p>
+                 <ul className="space-y-3 relative z-10 mt-auto">
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-secondary-green-dark shrink-0" />
+                       Proyecto Propio (SdA)
+                    </li>
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-secondary-green-dark shrink-0" />
+                       Sin Exámenes Teóricos
+                    </li>
+                    <li className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                       <CheckCircle className="h-5 w-5 text-secondary-green-dark shrink-0" />
+                       Aplicación Inmediata
+                    </li>
+                 </ul>
               </div>
            </div>
         </div>

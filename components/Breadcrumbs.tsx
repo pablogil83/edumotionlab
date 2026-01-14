@@ -13,7 +13,7 @@ const Breadcrumbs: React.FC = () => {
 
   const routeNameMap: { [key: string]: string } = {
     project: 'Metodología',
-    program: 'Programa Formativo',
+    program: 'Programa de Curso',
     resources: 'Recursos Digitales',
     about: 'EduMotion Lab',
     faq: 'Preguntas Frecuentes',
