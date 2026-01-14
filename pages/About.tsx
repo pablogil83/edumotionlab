@@ -1,29 +1,8 @@
-import React, { useState } from 'react';
-import { Lightbulb, Users, Leaf, Target, Award, ArrowRight, Rocket, Mail, Link as LinkIcon, Zap, Eye, Mic2, Flag, CheckCircle, ClipboardCheck, Puzzle, Loader2, Compass, Heart, Linkedin, Instagram } from 'lucide-react';
+import React from 'react';
+import { Lightbulb, Users, Leaf, Target, Award, ArrowRight, Rocket, Mail, Link as LinkIcon, Zap, Eye, Mic2, Flag, CheckCircle, ClipboardCheck, Puzzle, Compass, Heart, Linkedin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-
-// Componente auxiliar para manejar la carga de imágenes de OneDrive
-const ImageWithLoader: React.FC<{ src: string; alt: string; className?: string; imgClassName?: string }> = ({ src, alt, className, imgClassName }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  return (
-    <div className={`relative w-full h-full ${className || ''}`}>
-      {isLoading && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 z-20">
-          <Loader2 className="h-8 w-8 text-primary/40 animate-spin" />
-          <span className="text-[10px] font-bold text-gray-400 mt-2 uppercase tracking-wide">Cargando...</span>
-        </div>
-      )}
-      <img 
-        src={src} 
-        alt={alt} 
-        onLoad={() => setIsLoading(false)}
-        className={`${imgClassName || ''} transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-      />
-    </div>
-  );
-};
+import ImageWithLoader from '../components/ImageWithLoader';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
@@ -185,23 +164,25 @@ const About: React.FC = () => {
              <div className="flex flex-col lg:flex-row items-center gap-16">
                 <div className="lg:w-1/2 animate-fade-in-up">
                    
-                   {/* Social Buttons Above Title */}
-                   <div className="flex items-center gap-3 mb-1 animate-fade-in">
-                     <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
-                     <div className="flex gap-2 items-center">
-                       <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
-                       <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
-                       <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
-                          <Mail className="h-3 w-3" /> Newsletter
+                   {/* Social Buttons - STANDARDIZED */}
+                   <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 animate-fade-in">
+                     <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Síguenos:</span>
+                     <div className="flex items-center gap-3">
+                       <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-2 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors shadow-sm" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+                       <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-2 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors shadow-sm" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+                       <Link to="/contact" className="flex items-center gap-2 px-5 py-2 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+                          <Mail className="h-3.5 w-3.5" /> Newsletter
                        </Link>
                      </div>
                    </div>
 
-                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-brand-orange text-xs font-bold uppercase mb-6 border border-orange-200">
-                      <Rocket className="h-4 w-4" /> Sobre Nosotros
+                   <div className="flex justify-center lg:justify-start">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-brand-orange text-xs font-bold uppercase mb-6 border border-orange-200">
+                         <Rocket className="h-4 w-4" /> Sobre Nosotros
+                      </div>
                    </div>
                    
-                   <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-2">
+                   <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-4">
                       {t('about.hero.title')}
                    </h1>
                    
@@ -235,7 +216,8 @@ const About: React.FC = () => {
                       <ImageWithLoader 
                           src="https://1drv.ms/i/c/176b0767a5ca5a26/IQSVyLh7ZZYESoTjCOHVW5m0AR0pU2SFGCNmA0SVR5j-sFg?width=660" 
                           alt="Alumnos en gimnasio escolar" 
-                          imgClassName="w-full h-full object-cover" 
+                          imgClassName="w-full h-full object-cover"
+                          priority={true} 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                       <div className="absolute bottom-6 left-6 text-white pointer-events-none">
@@ -325,12 +307,13 @@ const About: React.FC = () => {
                             {/* Image */}
                             <div className="hidden md:block w-full md:w-5/12 pl-12 md:pl-0">
                                <div className={`relative rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-video transform transition-all duration-500 hover:scale-105 ${idx % 2 === 0 ? '-rotate-2' : 'rotate-2'}`}>
-                                  <img 
+                                  <ImageWithLoader
                                     src={step.sideImage} 
                                     alt={`Imagen relacionada con ${step.title}`}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full"
+                                    imgClassName="object-cover"
                                   />
-                                  <div className="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+                                  <div className="absolute inset-0 bg-primary/10 mix-blend-multiply pointer-events-none"></div>
                                </div>
                             </div>
 
@@ -344,7 +327,7 @@ const About: React.FC = () => {
                             {/* Content Card */}
                             <div className="w-full md:w-5/12 pl-16 md:pl-0">
                                <div className="block md:hidden mb-4 rounded-xl overflow-hidden shadow-md border-2 border-white">
-                                  <img src={step.sideImage} alt="" className="w-full h-40 object-cover" />
+                                  <ImageWithLoader src={step.sideImage} alt="" className="w-full h-40" imgClassName="object-cover" />
                                </div>
                                <div className={`bg-white p-6 md:p-8 rounded-2xl shadow-sm border-l-4 ${step.color} hover:shadow-xl transition-all duration-300`}>
                                   <div className="flex items-center gap-3 mb-3">
@@ -383,6 +366,7 @@ const About: React.FC = () => {
                          <ImageWithLoader 
                             src={member.image} 
                             alt={member.name}
+                            className="w-full h-full"
                             imgClassName={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${member.isPhoto ? 'object-contain object-bottom' : 'object-contain object-bottom p-4'}`}
                          />
                       </div>

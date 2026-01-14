@@ -35,7 +35,7 @@
               "brand-orange": "#F97316",
               "brand-orange-light": "#fb923c",
               dark: "#0f172a",
-              light: "#f8fafc",
+              light: "#f1f5f9", // Un poco más oscuro para contraste
               success: "#10b981",
             },
             fontFamily: {
@@ -44,18 +44,34 @@
             },
             animation: {
               'fade-in': 'fadeIn 0.5s ease-out',
-              'fade-in-up': 'fadeInUp 0.5s ease-out',
+              'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
               'fade-in-down': 'fadeInDown 0.3s ease-out forwards',
-              'bounce-subtle': 'bounceSubtle 2s infinite',
+              'bounce-subtle': 'bounceSubtle 3s infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'blob': 'blob 7s infinite',
             },
             keyframes: {
               fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-              fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+              fadeInUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
               fadeInDown: { '0%': { opacity: '0', transform: 'translateY(-10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
               bounceSubtle: {
-                '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+                '0%, 100%': { transform: 'translateY(-3%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
                 '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
               }
+            },
+            backgroundImage: {
+              'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E\")",
             }
           }
         }
@@ -64,9 +80,23 @@
     <style>
       /* Cambiamos height: 100% por min-height para permitir scroll natural en window */
       html { height: 100%; scroll-behavior: smooth; }
-      body { min-height: 100%; margin: 0; padding: 0; background-color: #f8fafc; font-family: 'Noto Sans', sans-serif; overflow-x: hidden; }
+      body { 
+        min-height: 100%; 
+        margin: 0; 
+        padding: 0; 
+        background-color: #f1f5f9; /* Slate-100 para contraste */
+        font-family: 'Noto Sans', sans-serif; 
+        overflow-x: hidden; 
+      }
       #root { min-height: 100%; display: flex; flex-direction: column; }
       .leaflet-container { width: 100%; height: 100%; z-index: 10; }
+      
+      /* Utility for glass effect cards */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
     </style>
   <script type="importmap">
 {

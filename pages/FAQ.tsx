@@ -150,24 +150,24 @@ const FAQ: React.FC = () => {
     <div className="animate-fade-in bg-white min-h-screen">
       {/* Header Section */}
       <section className="bg-light border-b border-gray-100 pt-20 pb-16 px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+        <div className="max-w-4xl mx-auto text-center">
           
-          {/* Social Buttons Above Title */}
-          <div className="flex items-center justify-center gap-3 mb-1 animate-fade-in">
-             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
-             <div className="flex gap-2 items-center">
-               <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
-               <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
-               <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
+          {/* Social Buttons - STANDARDIZED CENTERED */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-8 animate-fade-in">
+             <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Síguenos:</span>
+             <div className="flex items-center gap-3">
+               <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-2 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors shadow-sm" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+               <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-2 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors shadow-sm" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+               <Link to="/contact" className="flex items-center gap-2 px-5 py-2 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
                   <Mail className="h-3 w-3" /> Newsletter
                </Link>
              </div>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-6">
             <HelpCircle className="h-4 w-4" /> Centro de Ayuda
           </div>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-2">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-4 mb-4">
             Preguntas Frecuentes
           </h1>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">

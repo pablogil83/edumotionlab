@@ -28,11 +28,11 @@ const Success: React.FC = () => {
               {isContact ? 'Mensaje Enviado' : 'Inscripción Exitosa'}
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-dark">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-2">
               {isContact ? (
-                 <>¡Gracias por <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">contactarnos!</span></>
+                 <>¡Gracias por <br/>contactarnos!</>
               ) : (
-                 <>Bienvenido a <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-accent to-primary">Innovar en Movimiento</span></>
+                 <>Bienvenido a <br/>Innovar en Movimiento</>
               )}
             </h1>
             

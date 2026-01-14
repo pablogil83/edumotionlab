@@ -95,37 +95,28 @@ const Contact: React.FC = () => {
           <div className="flex flex-col h-full">
              
              {/* Header de contacto + Redes Sociales Encima del título */}
-             <div className="mb-6">
-                <div className="flex items-center gap-3 mb-4 animate-fade-in">
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Síguenos:</span>
-                  <div className="flex gap-2 items-center">
-                    <a 
-                      href="https://www.linkedin.com/in/edumotionlab/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-1.5 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-colors"
-                      aria-label="LinkedIn"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                    <a 
-                      href="https://www.instagram.com/edumotionlab/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-1.5 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-colors"
-                      aria-label="Instagram"
-                    >
-                      <Instagram className="h-4 w-4" />
-                    </a>
-                    <Link to="/contact" className="flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
-                        <Mail className="h-3 w-3" /> Newsletter
+             <div className="flex flex-col">
+                {/* Social Buttons - STANDARDIZED LEFT */}
+                <div className="flex flex-wrap items-center justify-start gap-4 mb-8 animate-fade-in">
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mr-2">Síguenos:</span>
+                  <div className="flex items-center gap-3">
+                    <a href="https://www.linkedin.com/in/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-2 bg-blue-50 text-[#0077b5] rounded-full hover:bg-[#0077b5] hover:text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
+                    <a href="https://www.instagram.com/edumotionlab/" target="_blank" rel="noopener noreferrer" className="p-2 bg-pink-50 text-[#E1306C] rounded-full hover:bg-[#E1306C] hover:text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5" aria-label="Instagram"><Instagram className="h-4 w-4" /></a>
+                    <Link to="/contact" className="flex items-center gap-2 px-5 py-2 bg-orange-50 border border-orange-200 rounded-full text-xs font-bold text-brand-orange hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all uppercase tracking-wide ml-2 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                        <Mail className="h-3.5 w-3.5" /> Newsletter
                     </Link>
                   </div>
                 </div>
 
-                <span className="text-accent font-bold text-sm tracking-wide">CONTACTO</span>
-                <h1 className="text-4xl font-black text-dark mb-6 mt-2">{t('contact.title')}</h1>
-                <p className="text-gray-500 text-lg">
+                <div className="flex justify-start">
+                   <span className="text-accent font-bold text-sm tracking-wide uppercase mb-6 block">CONTACTO</span>
+                </div>
+                
+                <h1 className="text-4xl lg:text-5xl font-black mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-4">
+                   {t('contact.title')}
+                </h1>
+                
+                <p className="text-gray-500 text-lg mb-8">
                     {t('contact.subtitle')}
                 </p>
              </div>

@@ -121,9 +121,8 @@ const Register: React.FC = () => {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-green/20 text-secondary-green-dark text-xs font-bold uppercase mb-6 animate-pulse border border-secondary-green/30">
                    <CheckCircle className="h-4 w-4" /> Plazas abiertas 2026
                 </div>
-                <h1 className="text-4xl lg:text-5xl font-black text-dark mb-6 leading-tight">
-                   Únete a <br/>
-                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Innovar en Movimiento</span>
+                <h1 className="text-4xl lg:text-5xl font-black mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary-green via-primary to-accent pb-4">
+                   Únete a <br/> Innovar en Movimiento
                 </h1>
                 <p className="text-lg text-gray-500">
                    Reserva tu plaza ahora. Una experiencia diseñada para educadores que buscan el cambio real en el aula.
